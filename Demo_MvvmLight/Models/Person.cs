@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Demo_MvvmLight.Models
 {
-    public class Person:IData
+    public class Person
     {
+        public Person()
+        {
+
+        }
+        private string pass;
+        private string name;
+
+        public string Name { get => name; set => name = value; }
+        public string Pass { get => pass; set => pass = value; }
     }
 }

@@ -24789,10 +24789,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\tran\\documents\\visual studio 2017\\Projects\\Demo_MvvmLight\\Demo_MvvmLight\\Demo_MvvmLight.csproj",
+      "projectUniqueName": "C:\\Users\\Tran\\documents\\visual studio 2017\\Projects\\Demo_MvvmLight\\Demo_MvvmLight\\Demo_MvvmLight.csproj",
       "projectName": "Demo_MvvmLight",
-      "projectPath": "c:\\users\\tran\\documents\\visual studio 2017\\Projects\\Demo_MvvmLight\\Demo_MvvmLight\\Demo_MvvmLight.csproj",
-      "outputPath": "c:\\users\\tran\\documents\\visual studio 2017\\Projects\\Demo_MvvmLight\\Demo_MvvmLight\\obj\\",
+      "projectPath": "C:\\Users\\Tran\\documents\\visual studio 2017\\Projects\\Demo_MvvmLight\\Demo_MvvmLight\\Demo_MvvmLight.csproj",
+      "outputPath": "C:\\Users\\Tran\\documents\\visual studio 2017\\Projects\\Demo_MvvmLight\\Demo_MvvmLight\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "uap10.0.10240"

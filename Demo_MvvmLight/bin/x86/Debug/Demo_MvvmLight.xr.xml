@@ -4,6 +4,8 @@
     <RootPropertyPathName Name="HomeViewModel" />
     <RootPropertyPathName Name="LoginViewModel" />
     <RootPropertyPathName Name="MainViewModel" />
+    <RootPropertyPathName Name="GetPeopleCmmd" />
+    <RootPropertyPathName Name="Children" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -42,6 +44,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
+      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Margin" />
@@ -57,6 +60,14 @@
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Demo_MvvmLight.Views.HomePage" />
     <RootType FullName="Demo_MvvmLight.Views.LoginPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="CommandParameter" />
+    </RootType>
     <RootType FullName="Demo_MvvmLight.Views.MainPage" />
   </Roots.RootTypes>
 </Roots>

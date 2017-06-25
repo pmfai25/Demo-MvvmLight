@@ -14,13 +14,14 @@ namespace Demo_MvvmLight.ViewModels
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-
+            SimpleIoc.Default.Register<IData, Data2>();
             SimpleIoc.Default.Register(() => _navigationService);
             Register<MainViewModel, MainPage>();
             Register<LoginViewModel, LoginPage>();
             Register<HomeViewModel, HomePage>();
         }
-
+        
+        
         public HomeViewModel HomeViewModel => ServiceLocator.Current.GetInstance<HomeViewModel>();
 
         public LoginViewModel LoginViewModel => ServiceLocator.Current.GetInstance<LoginViewModel>();

@@ -10,22 +10,22 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>25706B38-CA49-4776-B4E4-0B3BDB50BD00</PackageIdentityName>
     <PackageIdentityPublisher>CN=Tran</PackageIdentityPublisher>
-    <IntermediateOutputPath>c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.exe">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.exe">
       <PackagePath>entrypoint\Demo_MvvmLight.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tran\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
@@ -388,47 +388,47 @@
     <AppxPackagedFile Include="C:\Users\Tran\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.xr.xml">
       <PackagePath>Demo_MvvmLight.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\Demo_MvvmLight.exe">
+    <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\Demo_MvvmLight.exe">
       <PackagePath>Demo_MvvmLight.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

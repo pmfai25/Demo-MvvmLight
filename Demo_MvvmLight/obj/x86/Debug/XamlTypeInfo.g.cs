@@ -197,7 +197,6 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
         private object Activate_2_HomeViewModel() { return new global::Demo_MvvmLight.ViewModels.HomeViewModel(); }
         private object Activate_4_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
         private object Activate_5_LoginViewModel() { return new global::Demo_MvvmLight.ViewModels.LoginViewModel(); }
-        private object Activate_6_MainViewModel() { return new global::Demo_MvvmLight.ViewModels.MainViewModel(); }
         private object Activate_7_HomePage() { return new global::Demo_MvvmLight.Views.HomePage(); }
         private object Activate_10_LoginPage() { return new global::Demo_MvvmLight.Views.LoginPage(); }
         private object Activate_11_MainPage() { return new global::Demo_MvvmLight.Views.MainPage(); }

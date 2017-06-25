@@ -138,7 +138,6 @@ c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLigh
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\System.Xml.XDocument.dll
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\System.Xml.XmlDocument.dll
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\System.Xml.XmlSerializer.dll
-c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Demo_MvvmLight.csprojResolveAssemblyReference.cache
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\App.g.i.cs
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\App.g.cs
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\HomePage.g.i.cs
@@ -247,3 +246,4 @@ c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLigh
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml
 c:\users\tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Demo_MvvmLight.csprojResolveAssemblyReference.cache

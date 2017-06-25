@@ -1,4 +1,4 @@
-<Page
+﻿<Page
     x:Class="Demo_MvvmLight.Views.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,30 +8,30 @@
     mc:Ignorable="d"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core">
-    <Grid
+    <Grid x:ConnectionId='1'
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
 
         <Grid.RowDefinitions>
-            <RowDefinition x:Name="TitleRow" Height="48"/>
+            <RowDefinition x:ConnectionId='2' x:Name="TitleRow" Height="48"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock
+        <TextBlock x:ConnectionId='3'
             x:Name="TitlePage"
             x:Uid="Main_Title"
            
             Style="{StaticResource PageTitleStyle}" />
 
-        <Grid x:Name="Grid_main"
+        <Grid x:ConnectionId='4' x:Name="Grid_main"
             Grid.Row="1" 
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
-            <ListView x:Name="Lsv_people">
+            <ListView x:ConnectionId='5' x:Name="Lsv_people">
                 
             </ListView>
-            <Button x:Name="Btn_click"
+            <Button x:ConnectionId='6' x:Name="Btn_click"
                     Content="Click"
                     VerticalAlignment="Bottom"
                     HorizontalAlignment="Right"
@@ -40,3 +40,4 @@
         </Grid>
     </Grid>
 </Page>
+
