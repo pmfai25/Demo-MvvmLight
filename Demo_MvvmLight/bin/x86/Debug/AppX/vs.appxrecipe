@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>A7986A3EB75B6667AF8E34D92692F8EB525C9E26157A67DE1E7ACA2CFF0F3694</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>B7B64360F9BFC9A41A2CE912061C913F8ABFCBF612079C5C6B2A0EB5997ACEE6</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>25706B38-CA49-4776-B4E4-0B3BDB50BD00_1.0.0.0_x86__xqdpsre0p1byt</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>25706B38-CA49-4776-B4E4-0B3BDB50BD00_xqdpsre0p1byt!App</RegisteredUserModeAppID>
     <RegisteredPackageID>25706B38-CA49-4776-B4E4-0B3BDB50BD00</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-25T12:01:56.429</Modified>
+      <Modified>2017-06-26T14:41:20.282</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.exe">
       <PackagePath>entrypoint\Demo_MvvmLight.exe</PackagePath>
-      <Modified>2017-06-25T12:01:54.949</Modified>
+      <Modified>2017-06-26T14:41:18.856</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tran\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -559,7 +559,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.xr.xml">
       <PackagePath>Demo_MvvmLight.xr.xml</PackagePath>
-      <Modified>2017-06-25T10:15:55.851</Modified>
+      <Modified>2017-06-26T14:39:37.453</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -568,11 +568,11 @@
     <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-06-25T12:01:55.632</Modified>
+      <Modified>2017-06-26T14:41:19.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\Demo_MvvmLight.exe">
       <PackagePath>Demo_MvvmLight.exe</PackagePath>
-      <Modified>2017-06-25T12:01:56.422</Modified>
+      <Modified>2017-06-26T14:41:20.275</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@ using Demo_MvvmLight.Services;
 using Demo_MvvmLight.Views;
 
 using GalaSoft.MvvmLight.Ioc;
-
+using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Demo_MvvmLight.ViewModels
@@ -14,7 +14,7 @@ namespace Demo_MvvmLight.ViewModels
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<IData, Data2>();
+            SimpleIoc.Default.Register<IData, Data2>(); 
             SimpleIoc.Default.Register(() => _navigationService);
             Register<MainViewModel, MainPage>();
             Register<LoginViewModel, LoginPage>();

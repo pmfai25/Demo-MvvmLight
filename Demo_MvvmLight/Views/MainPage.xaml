@@ -28,15 +28,75 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
-            <ListView x:Name="Lsv_people">
-                
-            </ListView>
-            <Button x:Name="Btn_click"
-                    Content="Click"
-                    VerticalAlignment="Bottom"
-                    HorizontalAlignment="Right"
-                    Command="{Binding GetPeopleCmmd}"
-                    CommandParameter="{Binding Children, ElementName=Grid_main}"/>
+
+
+            <Frame x:Name="mainFrame" Background="Red">
+
+                <Grid Background="CornflowerBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock HorizontalAlignment="Center"
+                                   Foreground="BlanchedAlmond"
+                                   FontSize="50"
+                                   Margin="0,100,0,0"                                     
+                                   Text="Sign In"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <StackPanel Orientation="Vertical">
+
+                            <TextBox Name="Txb_User"
+                                 Height="50"
+                                 PlaceholderText="User name"
+                                 FontSize="30"
+                                 BorderBrush="{Binding BorderForTxbUser}"    
+                                 Text="{Binding TextTxbUser,Mode=TwoWay}"
+                                 BorderThickness="10"
+                                 Margin="100,0,100,0"/>
+
+                            <PasswordBox Name="Txb_Password"
+                                 Height="50"
+                                 FontSize="30"
+                                 PasswordChar="*"
+                                 InputScope="Password"
+                                 BorderThickness="0"
+                                 PlaceholderText="Password"
+                                 Margin="100,50,100,0"
+                                 Password="{Binding TextTxbPass,Mode=TwoWay}"/>
+
+                        </StackPanel>
+
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Center">
+
+                            <Button Name="Btn_SignIn"
+                                Content="Log In"
+                                FontSize="50"
+                                Margin="0,0,100,0"
+                                Foreground="Black"
+                                BorderThickness="0"
+                                Background="Gray"
+                                Command="{Binding Click_SignIn}"/>
+
+                            <Button Name="Btn_SignUp"
+                                BorderThickness="0"
+                                Content="Sign Up"
+                                FontSize="50"
+                                />
+
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Frame>
+
+
         </Grid>
     </Grid>
 </Page>
