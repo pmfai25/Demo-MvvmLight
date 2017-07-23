@@ -3,10 +3,13 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="HomeViewModel" />
     <RootPropertyPathName Name="LoginViewModel" />
+    <RootPropertyPathName Name="Click" />
+    <RootPropertyPathName Name="cc" />
     <RootPropertyPathName Name="MainViewModel" />
     <RootPropertyPathName Name="Click_SignIn" />
+    <RootPropertyPathName Name="TextTxblWarn" />
+    <RootPropertyPathName Name="BorderWarn" />
     <RootPropertyPathName Name="TextTxbPass" />
-    <RootPropertyPathName Name="BorderForTxbUser" />
     <RootPropertyPathName Name="TextTxbUser" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -27,10 +30,10 @@
       <RootProperty Name="TextTrimming" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Style" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Foreground" />
-      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Text" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="VerticalAlignment" />
@@ -65,35 +68,37 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Demo_MvvmLight.Views.HomePage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Background" />
+    </RootType>
     <RootType FullName="Demo_MvvmLight.Views.LoginPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">
-      <RootProperty Name="Background" />
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Children" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Name" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Command" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Name" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="PlaceholderText" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="BorderBrush" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Name" />
@@ -102,6 +107,7 @@
       <RootProperty Name="PasswordChar" />
       <RootProperty Name="InputScope" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Background" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Password" />

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight;
 using Windows.UI.Xaml.Controls;
+using Demo_MvvmLight.MEssenger;
 using Demo_MvvmLight.Views;
 using Demo_MvvmLight.Models;
 using System.Collections.ObjectModel;
@@ -16,26 +18,53 @@ using Demo_MvvmLight.Services;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI;
+using System.Composition;
+using GalaSoft.MvvmLight.Messaging;
+using SQLitePCL;
+using System.Diagnostics;
 
 namespace Demo_MvvmLight.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+
         #region variable
-        
-        private Brush borderForTxbUser;
+              
+        public string example { get; set; }
+        private string textTxblWarn;
+        private Brush borderWarn;
         private IData datasource;
-        public List<Person> People { get; set; }
+        public List<User> People { get; set; }
         private string textTxbUser;
         private string textTxbPass;
         private ICommand click_SignIn;
         #endregion
+
         public MainViewModel(IData data)
         {
+           
             this.datasource = data;
-            People = new List<Person>();
+            People = new List<User>();
         }
+        #region GetInstance from ServiceLocator
+
+        #region Get String sql for connection
+        /// <summary>
+        /// Get a string for connection
+        /// </summary>
+        public string _StringSql
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<string>("sqlString");
+            }
+        }
+        #endregion
+
         #region NavigationService
+        /// <summary>
+        /// Get NavigationService for navigation
+        /// </summary>
         public NavigationServiceEx NavigationService
         {
             get
@@ -44,6 +73,7 @@ namespace Demo_MvvmLight.ViewModels
             }
         }
         #endregion
+#endregion
 
         #region Properties 
         public string TextTxbUser { get => textTxbUser; set => textTxbUser = value; }
@@ -53,31 +83,70 @@ namespace Demo_MvvmLight.ViewModels
         public ICommand Click_SignIn { get
             {
                 click_SignIn = new RelayCommand(() => {
-                    if (SignIncommand()!=true)
+
+//                     using (var db = new SQLiteConnection(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\Data.db"))
+//                     {
+//                         List<User> user = new List<User>();
+//                         var statement = db.Prepare("select * from User");
+//                         while (!(SQLiteResult.DONE == statement.Step()))
+//                         {
+//                             user.Add(new User() {Name=statement[0].ToString(),Pass=statement[1].ToString(),NameOfUser=statement[2].ToString() });
+//                         }
+//                         Debug.WriteLine("end");
+//                     }
+                    if (SignIncommand()==false)
                     {
-                        BorderForTxbUser = new SolidColorBrush(Colors.Red);
+                        
+                        Messenger.Default.Send<ButtonMessage>(new ButtonMessage("test"));
+                        example = "Hello World";
+                        SolidColorBrush MyBrush = new SolidColorBrush(Colors.Red);
+                        BorderWarn = MyBrush;
+                        TextTxblWarn = "Your account or password is incorrect.\n";
+                        RaisePropertyChanged("BorderForTxbUser");
+                        RaisePropertyChanged("TextTxblWarn");
                     }
+                    
                     //SignIncommand();
                 });
                 return click_SignIn;
             } }
         #endregion
 
-        public Brush BorderForTxbUser { get => borderForTxbUser; set => borderForTxbUser = value; }
-        
+        public Brush BorderWarn { get {
+                if (borderWarn==null)
+                {
+                    SolidColorBrush MyBrush = new SolidColorBrush(Colors.White);
+                    borderWarn = MyBrush;
+                    return borderWarn;
+                }
+                else
+                {                    
+                    return borderWarn;
+                }
+                
+
+            } set { borderWarn = value; } }
+
+        public string TextTxblWarn { get => textTxblWarn; set => textTxblWarn = value; }
+
 
         #endregion
 
 
         #region Method for command
-
+        
+        /// <summary>
+        ///Check Password and User Name not null
+        ///and people is exist or not exist
+        /// </summary>
+        /// <returns></returns>
         bool SignIncommand()
         {
             if (TextTxbPass==null||TextTxbUser==null)
             {
                 return false;
             }
-            People = datasource.Get().ToList();
+            People = datasource.GetAllUser(_StringSql).ToList();
             if (People.Exists(p=>p.Name.Equals(TextTxbUser))==false)
             {
                 return false;

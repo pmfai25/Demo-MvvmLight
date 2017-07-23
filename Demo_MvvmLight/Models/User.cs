@@ -16,7 +16,9 @@ namespace Demo_MvvmLight.Models
 
         private string name;
 
+        private string nameOfUser;
         public string Name { get => name; set => name = value; }
         public string Pass { get => pass; set => pass = value; }
+        public string NameOfUser { get => nameOfUser; set => nameOfUser = value; }
     }
 }

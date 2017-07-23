@@ -4,6 +4,7 @@ using Demo_MvvmLight.Services;
 
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
+using Windows.Storage;
 
 namespace Demo_MvvmLight
 {
@@ -12,6 +13,7 @@ namespace Demo_MvvmLight
     /// </summary>
     sealed partial class App : Application
     {
+        public string a;
         private Lazy<ActivationService> _activationService;
         private ActivationService ActivationService { get { return _activationService.Value; } }
 
@@ -27,6 +29,20 @@ namespace Demo_MvvmLight
             _activationService = new Lazy<ActivationService>(CreateActivationService);
         }
 
+        private async void CreateDataBase()
+        {
+            StorageFile _file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Database/Data.db"));
+            StorageFolder _folder = ApplicationData.Current.LocalFolder;
+            try
+            {
+                StorageFile _fileCheck = await _folder.GetFileAsync("Data.db");
+            }
+            catch
+            {
+                await _file.CopyAsync(_folder, "Data.db", NameCollisionOption.ReplaceExisting);
+            }
+        }
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
@@ -34,6 +50,7 @@ namespace Demo_MvvmLight
         /// <param name="e">Details about the launch request and process.</param>
         protected override async void OnLaunched(LaunchActivatedEventArgs e)
         {
+            CreateDataBase();
             if (!e.PrelaunchActivated)
             {
                 await ActivationService.ActivateAsync(e); 

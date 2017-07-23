@@ -16,8 +16,8 @@
   </Properties>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10586.0" MaxVersionTested="10.0.15063.0" />
-    <PackageDependency Name="Microsoft.NET.CoreRuntime.1.1" MinVersion="1.1.25129.1" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
     <PackageDependency Name="Microsoft.VCLibs.140.00.Debug" MinVersion="14.0.25023.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.NET.CoreRuntime.1.1" MinVersion="1.1.25129.1" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
   </Dependencies>
   <Resources>
     <Resource Language="EN-US" />
@@ -37,6 +37,8 @@
     <genTemplate:Item Name="generator" Value="Windows Template Studio" />
     <genTemplate:Item Name="wizardVersion" Version="1.1.17173.2" />
     <genTemplate:Item Name="templatesVersion" Version="1.1.17173.1" />
+    <genTemplate:Item Name="projectType" Value="Blank" />
+    <genTemplate:Item Name="framework" Value="MVVMLight" />
   </genTemplate:Metadata>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
@@ -48,6 +50,7 @@
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="15.0.26419.1" />
+    <build:Item Name="SQLite.UWP.2015" Version="3.19.3" />
     <build:Item Name="MakePri.exe" Version="10.0.15063.137 (WinBuild.160101.0800)" />
   </build:Metadata>
 </Package>

@@ -1,1 +1,1 @@
-C:\Users\Tran\documents\visual studio 2017\Projects\Demo_MvvmLight\Demo_MvvmLight\Demo_MvvmLight.csproj;x86
+C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\Demo_MvvmLight.csproj;x86

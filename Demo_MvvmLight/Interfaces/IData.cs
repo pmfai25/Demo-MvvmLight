@@ -9,6 +9,7 @@ namespace Demo_MvvmLight
 {
     public interface IData
     {
-        IEnumerable<Person> Get();
+        IEnumerable<Stuff> GetAllStuff(string AddressDatabase);
+        IEnumerable<User>GetAllUser(string AddressDatabase);
     }
 }

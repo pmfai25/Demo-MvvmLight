@@ -1,20 +1,24 @@
 using Demo_MvvmLight.Services;
 using Demo_MvvmLight.Views;
-
+using Demo_MvvmLight.MEssenger;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
+using Windows.UI.Xaml.Shapes;
+//using System.IO;
 
 namespace Demo_MvvmLight.ViewModels
 {
     public class ViewModelLocator
     {
         NavigationServiceEx _navigationService = new NavigationServiceEx();
-
+        string _sqlConnection = Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\Data.db";
+        
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<IData, Data2>(); 
+            SimpleIoc.Default.Register<IData, Data>();
+            SimpleIoc.Default.Register(() => _sqlConnection,"sqlString");
             SimpleIoc.Default.Register(() => _navigationService);
             Register<MainViewModel, MainPage>();
             Register<LoginViewModel, LoginPage>();
