@@ -14,15 +14,19 @@ using GalaSoft.MvvmLight.Messaging;
 using System.Windows.Input;
 using Microsoft.Practices.ServiceLocation;
 
+
 namespace Demo_MvvmLight.ViewModels
 {
     public class LoginViewModel : ViewModelBase
     {
         
-        public string cc1 { get; set; }
-        public string cc { get; set; }
+        private ICommand click_Add;
+        private ICommand click_ShowAll;
+       
+        public string Cc { get; set; }
         public LoginViewModel()
-        {                        
+        {
+            
         }
        
         
@@ -30,7 +34,7 @@ namespace Demo_MvvmLight.ViewModels
             get {
                 click = new RelayCommand(() => 
                 {
-                    Messenger.Default.Register<MEssenger.ButtonMessage>(cc, (p) =>
+                    Messenger.Default.Register<MEssenger.ButtonMessage>(Cc, (p) =>
                     {
                         Method(p);
                     });
@@ -38,9 +42,16 @@ namespace Demo_MvvmLight.ViewModels
                 return click;
             }
             }
+
+        public ICommand Click_Add { get {
+                click = new RelayCommand(() => { });
+                return click_Add;
+            }
+        }
+
         public void Method(ButtonMessage bt)
         {
-            cc = bt.ButtonText;
+            Cc = bt.ButtonText;
         }
         private ICommand click;
     }

@@ -50,6 +50,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
+      <RootProperty Name="BottomAppBar" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
@@ -91,14 +92,23 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Background" />
     </RootType>
-    <RootType FullName="Demo_MvvmLight.Views.LoginPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Frame">
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBar">
+      <RootProperty Name="IsOpen" />
+      <RootProperty Name="IsSticky" />
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Children" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Icon" />
+    </RootType>
+    <RootType FullName="Demo_MvvmLight.Views.LoginPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Frame">
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Name" />

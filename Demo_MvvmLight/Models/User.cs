@@ -12,6 +12,12 @@ namespace Demo_MvvmLight.Models
         {
 
         }
+        public User(string namedisplay,string password,string nameofuser)
+        {
+            this.Name = namedisplay;
+            this.Pass = password;
+            this.NameOfUser = nameofuser;
+        }
         private string pass;
 
         private string name;

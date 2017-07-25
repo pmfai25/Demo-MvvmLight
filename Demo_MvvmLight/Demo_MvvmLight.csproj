@@ -118,7 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
+    <Compile Include="Enum\EChoice.cs" />
     <Compile Include="Interfaces\IData.cs" />
+    <Compile Include="Interfaces\ILoginData.cs" />
     <Compile Include="MEssenger\ButtonMessage.cs" />
     <Compile Include="Models\Stuff.cs" />
     <Compile Include="Models\User.cs" />

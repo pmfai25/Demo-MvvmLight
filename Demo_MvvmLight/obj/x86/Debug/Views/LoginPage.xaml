@@ -27,6 +27,7 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            
             <TextBox x:ConnectionId='4' x:Name="TxbName"
                      Background="Red"
                      Text="{Binding cc}"
@@ -37,5 +38,18 @@
                     Command="{Binding Click}"/>
         </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True"
+                IsSticky="True">
+            <StackPanel Orientation="Horizontal">
+                <AppBarButton x:ConnectionId='6' x:Name="AppbBtn_Add"
+                              Content="Add"
+                              Icon="Add"/>
+                <AppBarButton x:ConnectionId='7' x:Name="AppbBtn_Show"
+                              Content="Show All"
+                              Icon="ViewAll"/>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
 </Page>
 

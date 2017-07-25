@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI;
 using System.Composition;
 using GalaSoft.MvvmLight.Messaging;
+using Demo_MvvmLight.Enum;
 using SQLitePCL;
 using System.Diagnostics;
 
@@ -30,7 +31,7 @@ namespace Demo_MvvmLight.ViewModels
 
         #region variable
               
-        public string example { get; set; }
+        
         private string textTxblWarn;
         private Brush borderWarn;
         private IData datasource;
@@ -82,23 +83,17 @@ namespace Demo_MvvmLight.ViewModels
         #region Command
         public ICommand Click_SignIn { get
             {
-                click_SignIn = new RelayCommand(() => {
-
-//                     using (var db = new SQLiteConnection(Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\Data.db"))
-//                     {
-//                         List<User> user = new List<User>();
-//                         var statement = db.Prepare("select * from User");
-//                         while (!(SQLiteResult.DONE == statement.Step()))
-//                         {
-//                             user.Add(new User() {Name=statement[0].ToString(),Pass=statement[1].ToString(),NameOfUser=statement[2].ToString() });
-//                         }
-//                         Debug.WriteLine("end");
-//                     }
+                click_SignIn = new RelayCommand(async () =>
+                {
+                    //User user = new User() { Name = "f", NameOfUser = "f", Pass = "f" };
+                    //bool ab= await datasource.Insert(_StringSql, Enum.EChoice.User, user: user);
+                    
+                    ArrayList a=await datasource.SearchAsync(_StringSql, EChoice.User, "123", TargetUser: EinUser.Password);
+                    //bool abc = await datasource.DeleteWithAsync(_StringSql, EChoice.User, "f", euser: EinUser.Name);
+                    
                     if (SignIncommand()==false)
                     {
                         
-                        Messenger.Default.Send<ButtonMessage>(new ButtonMessage("test"));
-                        example = "Hello World";
                         SolidColorBrush MyBrush = new SolidColorBrush(Colors.Red);
                         BorderWarn = MyBrush;
                         TextTxblWarn = "Your account or password is incorrect.\n";
@@ -111,7 +106,9 @@ namespace Demo_MvvmLight.ViewModels
                 return click_SignIn;
             } }
         #endregion
-
+        /// <summary>
+        /// Boder for warn
+        /// </summary>
         public Brush BorderWarn { get {
                 if (borderWarn==null)
                 {

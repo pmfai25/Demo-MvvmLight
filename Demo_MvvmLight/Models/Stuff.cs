@@ -12,6 +12,13 @@ namespace Demo_MvvmLight.Models
         {
 
         }
+        public Stuff(string id,string sala,string fullname,string oLd)
+        {
+            this.ID = id;
+            this.Salary = sala;
+            this.Name = fullname;
+            this.Old = oLd;
+        }
         private string iD;
         private string salary;
         private string name;
