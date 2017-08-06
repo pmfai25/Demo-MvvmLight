@@ -126,4 +126,10 @@
   <data name="Home_Title.Text" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="Details_Title.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="AddStuff_Title.Text" xml:space="preserve">
+    <value>AddStuff</value>
+  </data>
 </root>

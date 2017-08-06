@@ -1,10 +1,14 @@
+
 using Demo_MvvmLight.Services;
 using Demo_MvvmLight.Views;
-using Demo_MvvmLight.MEssenger;
+
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
+
 using Microsoft.Practices.ServiceLocation;
+
 using Windows.UI.Xaml.Shapes;
+
 //using System.IO;
 
 namespace Demo_MvvmLight.ViewModels
@@ -23,7 +27,13 @@ namespace Demo_MvvmLight.ViewModels
             Register<MainViewModel, MainPage>();
             Register<LoginViewModel, LoginPage>();
             Register<HomeViewModel, HomePage>();
+            Register<DetailsViewModel, DetailsPage>();
+            Register<AddStuffViewModel, AddStuffPage>();
         }
+
+        public AddStuffViewModel AddStuffViewModel => ServiceLocator.Current.GetInstance<AddStuffViewModel>();
+
+        public DetailsViewModel DetailsViewModel => ServiceLocator.Current.GetInstance<DetailsViewModel>();
         
         
         public HomeViewModel HomeViewModel => ServiceLocator.Current.GetInstance<HomeViewModel>();

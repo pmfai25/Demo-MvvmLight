@@ -14,7 +14,9 @@ namespace Demo_MvvmLight.Services
     public class Data:IData
     {
         public Data()
-        { }
+        {
+            
+        }
 
 
         /// <summary>

@@ -4,10 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:Demo_MvvmLight.Models"
     DataContext="{Binding LoginViewModel, Source={StaticResource Locator}}"
     mc:Ignorable="d"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core">
+
     <Grid x:ConnectionId='1'
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
@@ -27,27 +29,84 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
-            
-            <TextBox x:ConnectionId='4' x:Name="TxbName"
-                     Background="Red"
-                     Text="{Binding cc}"
-                     VerticalAlignment="Center"/>
-            <Button x:ConnectionId='5' x:Name="BtnClick"
-                    VerticalAlignment="Bottom"
-                    Content="Click"
-                    Command="{Binding Click}"/>
+
+            <StackPanel x:ConnectionId='4'
+                Orientation="Vertical" x:Name="s">
+
+                <ListView x:ConnectionId='5'
+                    x:Name="LiV_Show"
+                    ItemsSource="{Binding DataStuff}"                    
+                    >
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Tapped">
+                            <core:InvokeCommandAction Command="{Binding Click_Item}"
+                                                      CommandParameter="{Binding ElementName=LiV_Show,Path=SelectedItem}"/>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter
+                                Property="HorizontalContentAlignment"
+                                
+                                Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+
+
+
+                            <StackPanel Orientation="Horizontal"  >
+
+                                <TextBlock                                     
+                                           Text="{Binding  ID}"/>
+                                <TextBlock
+                                            Text="{Binding Name}"/>
+                                <TextBlock
+                                            Text="{Binding Old}"/>
+                                <TextBlock
+                                            Text="{Binding Salary}"/>
+                            </StackPanel>
+
+
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackPanel>
+
+
         </Grid>
     </Grid>
     <Page.BottomAppBar>
         <AppBar IsOpen="True"
                 IsSticky="True">
             <StackPanel Orientation="Horizontal">
-                <AppBarButton x:ConnectionId='6' x:Name="AppbBtn_Add"
-                              Content="Add"
-                              Icon="Add"/>
-                <AppBarButton x:ConnectionId='7' x:Name="AppbBtn_Show"
-                              Content="Show All"
-                              Icon="ViewAll"/>
+                <RelativePanel>
+                    <AppBarButton x:ConnectionId='7'
+                        x:Name="AppbBtn_Add"
+                        Content="Add"
+                        Icon="Add"
+                        Command="{Binding Click_Add}"/>
+                    <TextBlock Text="Add"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton IsEnabled="False"/>
+                <RelativePanel>
+                    <AppBarButton x:ConnectionId='6'                    
+                        x:Name="AppbBtn_Show"
+                        Command="{Binding Click_ShowAllStuff}"
+                        Icon="ViewAll"/>
+                    <TextBlock Text="Show All"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton IsEnabled="False"/>
+
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>

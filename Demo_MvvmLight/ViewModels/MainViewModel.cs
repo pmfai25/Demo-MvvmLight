@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight;
 using Windows.UI.Xaml.Controls;
-using Demo_MvvmLight.MEssenger;
+
 using Demo_MvvmLight.Views;
 using Demo_MvvmLight.Models;
 using System.Collections.ObjectModel;
@@ -112,7 +112,7 @@ namespace Demo_MvvmLight.ViewModels
         public Brush BorderWarn { get {
                 if (borderWarn==null)
                 {
-                    SolidColorBrush MyBrush = new SolidColorBrush(Colors.White);
+                    var MyBrush = new SolidColorBrush(Colors.White);
                     borderWarn = MyBrush;
                     return borderWarn;
                 }

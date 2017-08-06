@@ -1,0 +1,116 @@
+﻿<Page
+    x:Class="Demo_MvvmLight.Views.AddStuffPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding AddStuffViewModel, Source={StaticResource Locator}}"
+    mc:Ignorable="d">
+    <Grid x:ConnectionId='1'
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:ConnectionId='2' x:Name="TitleRow" Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:ConnectionId='3'
+            x:Name="TitlePage"
+            x:Uid="AddStuff_Title"
+            Style="{StaticResource PageTitleStyle}" />
+
+        <Grid 
+            Grid.Row="1" 
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.-->
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel 
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        >
+                        <RelativePanel HorizontalAlignment="Stretch">
+                            <TextBlock Text="ID" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Left"/>
+                            <TextBlock x:ConnectionId='13' x:Name="Left" RelativePanel.AlignLeftWithPanel="True" Width="100"/>
+                            <TextBlock x:ConnectionId='14' x:Name="Right" RelativePanel.AlignRightWithPanel="True" Width="100" />
+                            <TextBox x:ConnectionId='15' x:Name="Txb_ID" InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                        </RelativePanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"
+                                VerticalAlignment="Center">
+                        <RelativePanel HorizontalAlignment="Stretch">
+                            <TextBlock Text="Name" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Left1"/>
+                            <TextBlock x:ConnectionId='10' x:Name="Left1" RelativePanel.AlignLeftWithPanel="True" Width="100"/>
+                            <TextBlock x:ConnectionId='11' x:Name="Right1" RelativePanel.AlignRightWithPanel="True" Width="100" />
+                            <TextBox x:ConnectionId='12' x:Name="Txb_Name" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                        </RelativePanel>
+                    </StackPanel>
+
+                </Grid>
+                
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel 
+                        Grid.Row="0"
+                        VerticalAlignment="Center"
+                        >
+                        <RelativePanel HorizontalAlignment="Stretch">
+                            <TextBlock Text="Old" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Leftrl0"/>
+                            <TextBlock x:ConnectionId='8' x:Name="Leftrl0" RelativePanel.AlignLeftWithPanel="True" Width="100"/>                            
+                            <TextBox x:ConnectionId='9' x:Name="Txb_Old" InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                        </RelativePanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"
+                                VerticalAlignment="Center">
+                        <RelativePanel HorizontalAlignment="Stretch">
+                            <TextBlock Text="Salary" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Leftrl1"/>
+                            <TextBlock x:ConnectionId='6' x:Name="Leftrl1" RelativePanel.AlignLeftWithPanel="True" Width="100"/>                            
+                            <TextBox x:ConnectionId='7' x:Name="Txb_Salary" InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                        </RelativePanel>
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal"
+                    >
+                    <Button x:ConnectionId='4'
+                        x:Name="Btn_Accept"
+                        Width="100"
+                        Height="50"
+                        Content="Ok"/>
+                    <TextBlock HorizontalAlignment="Center" Width="500"/>
+                    <Button x:ConnectionId='5'
+                        x:Name="Btn_Cancel"
+                        Width="100"
+                        Height="50"
+                        Content="Cancel"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        </Grid>
+
+</Page>
+
