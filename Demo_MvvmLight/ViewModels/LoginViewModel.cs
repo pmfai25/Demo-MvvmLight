@@ -9,15 +9,16 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight;
 using System.Reflection;
 using System.IO;
-
-using System.Composition.Hosting;
 using System.Composition;
+using System.Composition.Hosting;
 using GalaSoft.MvvmLight.Ioc;
 using Demo_MvvmLight.Models;
-using GalaSoft.MvvmLight.Messaging;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 using System.Windows.Input;
 using Microsoft.Practices.ServiceLocation;
 using Demo_MvvmLight.Services;
+using Windows.UI.Xaml;
 
 namespace Demo_MvvmLight.ViewModels
 {
@@ -30,8 +31,8 @@ namespace Demo_MvvmLight.ViewModels
         private IData _dataProviders;
         private ObservableCollection< Stuff> _dataStuff;
         private string _addressData;
-       
-        
+        private string _IdStuffPass;
+        private ICommand _rightTapped;
 
 
         public LoginViewModel(IData data )
@@ -86,9 +87,11 @@ namespace Demo_MvvmLight.ViewModels
         public ICommand Click_Item { get {
                 _click_Item = new RelayCommand<object>((p) =>
                 {
+                    //Messenger.Default.Register<string>(DetailsViewModel)
+                    IdStuffPass = (p as Stuff).ID.ToString();
+                    SimpleIoc.Default.Register(() => IdStuffPass, "IdStuff");
+                    //Messenger.Default.Send("aa","jj");
                     
-                    var IdStuff = (p as Stuff).ID.ToString();
-                    SimpleIoc.Default.Register(() => IdStuff, "Id");
                     NavigationService.Navigate(typeof(DetailsViewModel).FullName);
                     
                 });
@@ -104,11 +107,31 @@ namespace Demo_MvvmLight.ViewModels
                 return ServiceLocator.Current.GetInstance<NavigationServiceEx>();
             }
         }
-        
-        //         public void Method(ButtonMessage bt)
-        //         {
-        //             Cc = bt.ButtonText;
-        //         }
-        //         private ICommand click;
+
+        public string IdStuffPass { get => _IdStuffPass; set => _IdStuffPass = value; }
+        public ICommand RightTapped { get {
+                _rightTapped = new RelayCommand<Button>((p) => 
+                {
+                    MenuFlyout m = new MenuFlyout();
+                    MenuFlyoutItem mn = new MenuFlyoutItem();
+                    mn.Text = "Item 1";
+                    m.Items.Add(mn);
+                    m.ShowAt((FrameworkElement)p);
+                    //                     ContentDialog noWifiDialog = new ContentDialog
+                    //                     {
+                    //                         Title = "No wifi connection",
+                    //                         Content = "Check your connection and try again.",
+                    //                         
+                    //                         
+                    //                         
+                    //                     };
+                    // 
+                    //                     ContentDialogResult result = await noWifiDialog.ShowAsync();
+                });
+                return _rightTapped;
+            }
+        }
+
+
     }
 }

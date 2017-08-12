@@ -3,9 +3,28 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     DataContext="{Binding DetailsViewModel, Source={StaticResource Locator}}"
     mc:Ignorable="d">
+
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding Loaded}"/>
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+    <Page.Resources>
+        <Style TargetType="StackPanel" x:Key="StackCenter">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TxblRelativePanel">
+            <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignVerticalCenterWithPanel" Value="True"/>
+        </Style>
+    </Page.Resources>
     <Grid x:ConnectionId='1'
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
@@ -25,7 +44,122 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <!--#region TextBlock ID and Name-->
+                    <RelativePanel>
+                        <TextBlock x:ConnectionId='16' Text="ID :"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   x:Name="ID0"/>
+                        <TextBlock x:ConnectionId='17' Width="100"
+                                   Name="ID1"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignLeftWith="ID0"/>
+                        <TextBlock x:ConnectionId='18' Text="{Binding Id}"
+                                   x:Name="Txbl_ID"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   
+                                   RelativePanel.AlignLeftWith="space"/>
+                        <TextBlock x:ConnectionId='19' Name="space"
+                                   Width="50"
+                                   
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignRightWith="ID1"/>
+                    </RelativePanel>
+                </Grid>
+                <!--#endregion-->
+                <Grid Grid.Column="1">
+                    <RelativePanel>
+                        <TextBlock x:ConnectionId='12' Name="Name0" Text="Name :" Style="{StaticResource TxblRelativePanel}"/>
+                        <TextBlock x:ConnectionId='13' Width="100"
+                                   Name="Name1"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignLeftWith="Name0"/>
+                        <TextBlock x:ConnectionId='14' Name="space1"
+                                   Width="50"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignRightWith="Name1"/>
+                        <TextBlock x:ConnectionId='15' x:Name="Txbl_Name"
+                                   
+                                   Text="{Binding Name}"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignLeftWith="space1"/>
+                    </RelativePanel>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <RelativePanel>
+                        <TextBlock x:ConnectionId='8' Name="Salary0"  Text="Salary :" Style="{StaticResource TxblRelativePanel}"/>
+                        <TextBlock x:ConnectionId='9' Width="100"
+                                   Name="Salary1"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignLeftWith="Salary0"/>
+                        <TextBlock x:ConnectionId='10' Name="space2"
+                                   Width="50"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignRightWith="Salary1"/>
+                        <TextBlock x:ConnectionId='11' x:Name="Txbl_Salary"
+                                   Text="{Binding Salary}"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignLeftWith="space2"/>
+                    </RelativePanel>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <RelativePanel>
+                        <TextBlock x:ConnectionId='4' Name="Old0" Text="Old :" Style="{StaticResource TxblRelativePanel}"/>
+                        <TextBlock x:ConnectionId='5' Width="100"
+                                   Name="Old1"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignLeftWith="Old0"/>
+                        <TextBlock x:ConnectionId='6' Name="space3"
+                                   Width="50"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignRightWith="Old1"/>
+                        <TextBlock x:ConnectionId='7' x:Name="Txbl_Old"
+                                   Text="{Binding Old}"
+                                   Style="{StaticResource TxblRelativePanel}"
+                                   RelativePanel.AlignLeftWith="space3"/>
+                    </RelativePanel>
+                </Grid>
+
+            </Grid>
+
         </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True"
+                IsSticky="True">
+            <StackPanel Orientation="Horizontal">
+                <RelativePanel>
+                    <AppBarButton x:ConnectionId='20' x:Name="Btn_Edit"
+                          Icon="Edit"/>
+
+                    <TextBlock Text="Edit"
+                           RelativePanel.AlignBottomWithPanel="True"
+                           RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton IsEnabled="False"/>
+                
+
+            </StackPanel>
+            
+        </AppBar>
+    </Page.BottomAppBar>
+
 </Page>
 

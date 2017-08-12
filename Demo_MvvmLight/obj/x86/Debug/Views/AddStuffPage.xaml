@@ -1,4 +1,5 @@
-﻿<Page
+﻿
+    <Page
     x:Class="Demo_MvvmLight.Views.AddStuffPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -49,7 +50,11 @@
                             <TextBlock Text="ID" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Left"/>
                             <TextBlock x:ConnectionId='13' x:Name="Left" RelativePanel.AlignLeftWithPanel="True" Width="100"/>
                             <TextBlock x:ConnectionId='14' x:Name="Right" RelativePanel.AlignRightWithPanel="True" Width="100" />
-                            <TextBox x:ConnectionId='15' x:Name="Txb_ID" InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                            <TextBox x:ConnectionId='15' x:Name="Txb_ID"
+                                     InputScope="Number"
+                                     RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                     Width="300"
+                                     Text="{Binding Txb_ID,Mode=TwoWay}"/>
                         </RelativePanel>
                     </StackPanel>
                     <StackPanel Grid.Row="1"
@@ -58,7 +63,10 @@
                             <TextBlock Text="Name" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Left1"/>
                             <TextBlock x:ConnectionId='10' x:Name="Left1" RelativePanel.AlignLeftWithPanel="True" Width="100"/>
                             <TextBlock x:ConnectionId='11' x:Name="Right1" RelativePanel.AlignRightWithPanel="True" Width="100" />
-                            <TextBox x:ConnectionId='12' x:Name="Txb_Name" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                            <TextBox x:ConnectionId='12' x:Name="Txb_Name"
+                                     RelativePanel.AlignHorizontalCenterWithPanel="True"
+                                     Width="300"
+                                     Text="{Binding Txb_Name,Mode=TwoWay}"/>
                         </RelativePanel>
                     </StackPanel>
 
@@ -76,7 +84,9 @@
                         <RelativePanel HorizontalAlignment="Stretch">
                             <TextBlock Text="Old" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Leftrl0"/>
                             <TextBlock x:ConnectionId='8' x:Name="Leftrl0" RelativePanel.AlignLeftWithPanel="True" Width="100"/>                            
-                            <TextBox x:ConnectionId='9' x:Name="Txb_Old" InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                            <TextBox x:ConnectionId='9' x:Name="Txb_Old"
+                                     Text="{Binding Txb_Old,Mode=TwoWay}"
+                                     InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
                         </RelativePanel>
                     </StackPanel>
                     <StackPanel Grid.Row="1"
@@ -84,7 +94,9 @@
                         <RelativePanel HorizontalAlignment="Stretch">
                             <TextBlock Text="Salary" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Leftrl1"/>
                             <TextBlock x:ConnectionId='6' x:Name="Leftrl1" RelativePanel.AlignLeftWithPanel="True" Width="100"/>                            
-                            <TextBox x:ConnectionId='7' x:Name="Txb_Salary" InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
+                            <TextBox x:ConnectionId='7' x:Name="Txb_Salary"
+                                     Text="{Binding Txb_Salary,Mode=TwoWay}"
+                                     InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
                         </RelativePanel>
                     </StackPanel>
 
@@ -98,6 +110,7 @@
                     >
                     <Button x:ConnectionId='4'
                         x:Name="Btn_Accept"
+                        Command="{Binding Add}"
                         Width="100"
                         Height="50"
                         Content="Ok"/>
@@ -105,6 +118,7 @@
                     <Button x:ConnectionId='5'
                         x:Name="Btn_Cancel"
                         Width="100"
+                        Command="{Binding Cancel}"
                         Height="50"
                         Content="Cancel"/>
                 </StackPanel>

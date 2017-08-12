@@ -33,9 +33,12 @@ namespace Demo_MvvmLight.ViewModels
         private UInt32 _txb_ID;
         private byte _txb_Old;
         private uint _txb_Salary;
+        private ICommand _Cancel;
 
         public AddStuffViewModel(IData dt)
         {
+            Txb_Name = String.Empty;
+            
             this._dataProvider = dt;
         }
         public string Txb_Name { get => _txb_Name; set => _txb_Name = value; }
@@ -66,6 +69,14 @@ namespace Demo_MvvmLight.ViewModels
             }
         }
 
-
+        public ICommand Cancel { get
+            {
+                _Cancel = new RelayCommand(() => 
+                {
+                    ServiceLocator.Current.GetInstance<NavigationServiceEx>().GoBack();
+                });
+                return _Cancel;
+            }
+        }
     }
 }

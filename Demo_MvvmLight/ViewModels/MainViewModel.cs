@@ -156,11 +156,7 @@ namespace Demo_MvvmLight.ViewModels
             return false;
         }
 
-
         #endregion
-
-
-
 
     }
 }

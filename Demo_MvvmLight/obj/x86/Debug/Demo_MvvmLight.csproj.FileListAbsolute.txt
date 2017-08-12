@@ -268,4 +268,3 @@ C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLigh
 C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\AddStuffPage.xaml
 C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\AddStuffPage.xbf
 C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Views\AddStuffPage.xbf
-C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Demo_MvvmLight.csprojResolveAssemblyReference.cache

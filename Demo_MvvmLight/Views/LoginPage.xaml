@@ -4,12 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:model="using:Demo_MvvmLight.Models"
+    xmlns:Login="using:Demo_MvvmLight"
     DataContext="{Binding LoginViewModel, Source={StaticResource Locator}}"
     mc:Ignorable="d"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core">
-
+  
     <Grid
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
@@ -32,15 +32,29 @@
 
             <StackPanel
                 Orientation="Vertical" x:Name="s">
-
-                <ListView
-                    x:Name="LiV_Show"
-                    ItemsSource="{Binding DataStuff}"                    
-                    >
+                <Button x:Name="Btn" Content="Hello">
                     <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="RightTapped">
+
+                            <core:InvokeCommandAction   Command="{Binding RightTapped}"
+                                                       CommandParameter="{x:Bind }"/>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                     
+                </Button>
+
+                <ListView 
+                    x:Name="LiV_Show"
+                    ItemsSource="{Binding DataStuff}"
+                    ScrollViewer.VerticalScrollMode="Auto"                    
+                    >
+                    
+                    <i:Interaction.Behaviors>
+                      
                         <core:EventTriggerBehavior EventName="Tapped">
-                            <core:InvokeCommandAction Command="{Binding Click_Item}"
-                                                      CommandParameter="{Binding ElementName=LiV_Show,Path=SelectedItem}"/>
+                            
+                            <core:InvokeCommandAction   Command="{Binding Click_Item}"
+                                                      CommandParameter="{Binding ElementName=LiV_Show,Path= SelectedItem}"/>
                         </core:EventTriggerBehavior>
                     </i:Interaction.Behaviors>
                     <ListView.ItemContainerStyle>
@@ -55,17 +69,18 @@
                     <ListView.ItemTemplate>
                         <DataTemplate >
 
+                            
+                            <StackPanel Orientation="Horizontal" >
+                                
+                                <TextBlock  Text="{Binding  ID}"/>
 
-
-                            <StackPanel Orientation="Horizontal"  >
-
-                                <TextBlock                                     
-                                           Text="{Binding  ID}"/>
-                                <TextBlock
+                                <TextBlock  Margin="50,0,0,0"                                    
                                             Text="{Binding Name}"/>
-                                <TextBlock
+
+                                <TextBlock Margin="50,0,0,0"
                                             Text="{Binding Old}"/>
-                                <TextBlock
+
+                                <TextBlock Margin="50,0,0,0"
                                             Text="{Binding Salary}"/>
                             </StackPanel>
 
@@ -75,10 +90,10 @@
                     </ListView.ItemTemplate>
 
                 </ListView>
-
+                
             </StackPanel>
 
-
+         
         </Grid>
     </Grid>
     <Page.BottomAppBar>
