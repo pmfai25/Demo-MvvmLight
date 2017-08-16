@@ -1,0 +1,174 @@
+<Page
+    x:Class="Demo_MvvmLight.Views.ShowDataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Login="using:Demo_MvvmLight"
+    xmlns:Conver="using:Demo_MvvmLight.Converters"
+    DataContext="{Binding ShowDataViewModel, Source={StaticResource Locator}}"
+    mc:Ignorable="d"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core" >
+
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding Loaded_ShowData}"
+                                              />
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+
+    <Page.Resources>
+        <Conver:DefinePonter x:Key="PointMouse"/>
+        <Conver:RightTapEvent x:Key="Righttap"/>
+        <Flyout x:Key="rightflyout" Placement="Right">
+            <TextBlock Text="Hello"/>
+        </Flyout>
+    </Page.Resources>
+    <Grid
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="TitleRow" Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            x:Name="TitlePage"
+            x:Uid="Login_Title"
+            Style="{StaticResource PageTitleStyle}" />
+
+        <Grid x:Name="LayoutRoot"
+            Grid.Row="1" 
+            FlyoutBase.AttachedFlyout="{Binding Source={StaticResource rightflyout}}"
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.-->
+
+
+            <i:Interaction.Behaviors>
+                <core:EventTriggerBehavior EventName="PointerEntered">
+                    <core:InvokeCommandAction Command="{Binding MouseEnterLayoutRoot}"
+                                              InputConverter="{Binding Source={StaticResource PointMouse}}"/>
+                </core:EventTriggerBehavior>
+            </i:Interaction.Behaviors>
+
+
+
+
+
+            <StackPanel
+                Orientation="Vertical" x:Name="s">
+
+                <Button x:Name="Btn"
+                        Content="Hello"
+                        IsHoldingEnabled="True"
+                        IsRightTapEnabled="True" >
+
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="RightTapped">
+                            <core:InvokeCommandAction Command="{Binding RightTapped}"
+                                                      InputConverter="{StaticResource Righttap}"
+                                                     InputConverterParameter="{x:Bind Btn}"/>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+
+                </Button>
+
+                <ListView 
+                    x:Name="LiV_Show"
+                    ItemsSource="{Binding DataStuff}"
+                    ScrollViewer.VerticalScrollMode="Auto"                    
+                    IsHitTestVisible="True"
+                    IsHoldingEnabled="True"
+                    IsRightTapEnabled="True">
+
+
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="RightTapped">
+                            <core:InvokeCommandAction Command="{Binding RightTapped}"
+                                                      InputConverter="{StaticResource Righttap}"
+                                                      InputConverterParameter="{x:Bind LiV_Show}"
+                                                      />
+                        </core:EventTriggerBehavior>
+                        <core:EventTriggerBehavior EventName="Tapped">
+
+                            <core:InvokeCommandAction   Command="{Binding Click_Item}"
+                                                      CommandParameter="{Binding ElementName=LiV_Show,Path= SelectedItem}"/>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+
+                            <StackPanel Orientation="Horizontal"
+                                        IsRightTapEnabled="True"
+                                        >
+
+
+
+                                <TextBlock Text="{Binding  ID}"
+                                           IsRightTapEnabled="True"/>
+
+                                <TextBlock  Margin="50,0,0,0"                                    
+                                            Text="{Binding Name}"/>
+
+                                <TextBlock Margin="50,0,0,0"
+                                           Text="{Binding Old}"/>
+
+                                <TextBlock Margin="50,0,0,0"
+                                           Text="{Binding Salary}"/>
+                            </StackPanel>
+
+
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackPanel>
+
+
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True"
+                IsSticky="True"
+                IsEnabled="True" >
+            <StackPanel Orientation="Horizontal">
+                <RelativePanel>
+                    <AppBarButton
+                        x:Name="AppbBtn_Add"
+                        Content="Add"
+                        Icon="Add"
+                        Command="{Binding Click_Add}"/>
+                    <TextBlock Text="Add"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton IsEnabled="False"/>
+                <RelativePanel>
+                    <AppBarButton                    
+                        x:Name="AppbBtn_Show"
+                        Command="{Binding Click_ResetDataStuff}"
+                        Icon="Sync"/>
+                    <TextBlock Text="Reset Data"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton IsEnabled="False"/>
+
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+</Page>

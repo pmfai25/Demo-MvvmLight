@@ -24,6 +24,11 @@
             <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True"/>
             <Setter Property="RelativePanel.AlignVerticalCenterWithPanel" Value="True"/>
         </Style>
+
+        <Style TargetType="TextBox" x:Key="TxbRelativePanel">
+            <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True"/>
+            <Setter Property="RelativePanel.AlignVerticalCenterWithPanel" Value="True"/>
+        </Style>
     </Page.Resources>
     <Grid x:ConnectionId='1'
         x:Name="ContentArea"
@@ -39,11 +44,13 @@
             x:Uid="Details_Title"
             Style="{StaticResource PageTitleStyle}" />
 
-        <Grid 
-            Grid.Row="1" 
+        <Grid x:ConnectionId='4' 
+            Grid.Row="1"
+            x:Name="LayoutDetails"
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -56,19 +63,19 @@
                 <Grid Grid.Column="0">
                     <!--#region TextBlock ID and Name-->
                     <RelativePanel>
-                        <TextBlock x:ConnectionId='16' Text="ID :"
+                        <TextBlock x:ConnectionId='20' Text="ID :"
                                    Style="{StaticResource TxblRelativePanel}"
                                    x:Name="ID0"/>
-                        <TextBlock x:ConnectionId='17' Width="100"
+                        <TextBlock x:ConnectionId='21' Width="100"
                                    Name="ID1"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignLeftWith="ID0"/>
-                        <TextBlock x:ConnectionId='18' Text="{Binding Id}"
+                        <TextBlock x:ConnectionId='22' Text="{Binding Id}"
                                    x:Name="Txbl_ID"
                                    Style="{StaticResource TxblRelativePanel}"
                                    
                                    RelativePanel.AlignLeftWith="space"/>
-                        <TextBlock x:ConnectionId='19' Name="space"
+                        <TextBlock x:ConnectionId='23' Name="space"
                                    Width="50"
                                    
                                    Style="{StaticResource TxblRelativePanel}"
@@ -78,17 +85,24 @@
                 <!--#endregion-->
                 <Grid Grid.Column="1">
                     <RelativePanel>
-                        <TextBlock x:ConnectionId='12' Name="Name0" Text="Name :" Style="{StaticResource TxblRelativePanel}"/>
-                        <TextBlock x:ConnectionId='13' Width="100"
+                        <TextBlock x:ConnectionId='15' Name="Name0" Text="Name :" Style="{StaticResource TxblRelativePanel}"/>
+                        <TextBlock x:ConnectionId='16' Width="100"
                                    Name="Name1"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignLeftWith="Name0"/>
-                        <TextBlock x:ConnectionId='14' Name="space1"
+                        <TextBlock x:ConnectionId='17' Name="space1"
                                    Width="50"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignRightWith="Name1"/>
-                        <TextBlock x:ConnectionId='15' x:Name="Txbl_Name"
-                                   
+                        <TextBox x:ConnectionId='18' x:Name="Txb_Name"
+                                 Text="{Binding TempName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Width="150"
+                                 Style="{StaticResource TxbRelativePanel}"
+                                 RelativePanel.AlignLeftWith="space1"
+                                 Visibility="{Binding VisibilityForControls}"/>
+
+                        <TextBlock x:ConnectionId='19' x:Name="Txbl_Name"
+                                   Visibility="{Binding CanVisibility}"
                                    Text="{Binding Name}"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignLeftWith="space1"/>
@@ -104,36 +118,54 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <RelativePanel>
-                        <TextBlock x:ConnectionId='8' Name="Salary0"  Text="Salary :" Style="{StaticResource TxblRelativePanel}"/>
-                        <TextBlock x:ConnectionId='9' Width="100"
+                        <TextBlock x:ConnectionId='10' Name="Salary0"  Text="Salary :" Style="{StaticResource TxblRelativePanel}"/>
+                        <TextBlock x:ConnectionId='11' Width="100"
                                    Name="Salary1"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignLeftWith="Salary0"/>
-                        <TextBlock x:ConnectionId='10' Name="space2"
+                        <TextBlock x:ConnectionId='12' Name="space2"
                                    Width="50"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignRightWith="Salary1"/>
-                        <TextBlock x:ConnectionId='11' x:Name="Txbl_Salary"
+                        <TextBlock x:ConnectionId='13' x:Name="Txbl_Salary"
+                                   Visibility="{Binding CanVisibility}"
                                    Text="{Binding Salary}"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignLeftWith="space2"/>
+                        <TextBox x:ConnectionId='14' x:Name="Txb_Salary"
+                                 Text="{Binding TempSalary,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Width="150"
+                                 Style="{StaticResource TxbRelativePanel}"
+                                 RelativePanel.AlignLeftWith="space2"
+                                 Visibility="{Binding VisibilityForControls}"/>
+
                     </RelativePanel>
                 </Grid>
                 <Grid Grid.Column="1">
                     <RelativePanel>
-                        <TextBlock x:ConnectionId='4' Name="Old0" Text="Old :" Style="{StaticResource TxblRelativePanel}"/>
-                        <TextBlock x:ConnectionId='5' Width="100"
+                        <TextBlock x:ConnectionId='5' Name="Old0"
+                                   Text="Old :"
+                                   Style="{StaticResource TxblRelativePanel}"/>
+                        <TextBlock x:ConnectionId='6' Width="100"
                                    Name="Old1"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignLeftWith="Old0"/>
-                        <TextBlock x:ConnectionId='6' Name="space3"
+                        <TextBlock x:ConnectionId='7' Name="space3"
                                    Width="50"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignRightWith="Old1"/>
-                        <TextBlock x:ConnectionId='7' x:Name="Txbl_Old"
+                        <TextBlock x:ConnectionId='8' x:Name="Txbl_Old"
                                    Text="{Binding Old}"
+                                   Visibility="{Binding CanVisibility}"
                                    Style="{StaticResource TxblRelativePanel}"
                                    RelativePanel.AlignLeftWith="space3"/>
+                        <TextBox x:ConnectionId='9' x:Name="Txb_Old"
+                                 Text="{Binding TempOld,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                 Width="150"
+                                 Style="{StaticResource TxbRelativePanel}"
+                                 RelativePanel.AlignLeftWith="space3"
+                                 Visibility="{Binding VisibilityForControls}"/>
+                        
                     </RelativePanel>
                 </Grid>
 
@@ -145,16 +177,39 @@
         <AppBar IsOpen="True"
                 IsSticky="True">
             <StackPanel Orientation="Horizontal">
-                <RelativePanel>
-                    <AppBarButton x:ConnectionId='20' x:Name="Btn_Edit"
-                          Icon="Edit"/>
+                <RelativePanel Visibility="{Binding CanVisibility}">
+                    <AppBarButton x:ConnectionId='28' x:Name="Btn_Edit"
+                                  Icon="Edit"
+                                  Command="{Binding Edit}"
+                                  />
 
                     <TextBlock Text="Edit"
-                           RelativePanel.AlignBottomWithPanel="True"
-                           RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                               RelativePanel.AlignBottomWithPanel="True"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"/>
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
-                
+                <RelativePanel x:ConnectionId='24' x:Name="RelPnl_Accept"
+                               Visibility="{Binding VisibilityForControls}"
+                               >
+                    <AppBarButton x:ConnectionId='27' x:Name="AppBtn_Accept"
+                                  Icon="Accept"
+                                  Command="{Binding ComAccept}"/>
+                    <TextBlock Text="Accept"
+                               RelativePanel.AlignBottomWithPanel="True"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                </RelativePanel>
+
+                <AppBarButton IsEnabled="False"/>
+                <RelativePanel x:ConnectionId='25' x:Name="RelPnl_Cancel"
+                               Visibility="{Binding VisibilityForControls}">
+                    <AppBarButton x:ConnectionId='26' x:Name="AppBtn_Cancel"
+                                  Icon="Cancel"
+                                  Command="{Binding ComCancel}"/>
+                    <TextBlock Text="Cancel"
+                               RelativePanel.AlignBottomWithPanel="True"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               />
+                </RelativePanel>
 
             </StackPanel>
             

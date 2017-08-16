@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
+  <Roots.Interfaces>
+    <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
+  </Roots.Interfaces>
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="AddStuffViewModel" />
     <RootPropertyPathName Name="Cancel" />
@@ -10,18 +13,28 @@
     <RootPropertyPathName Name="Txb_ID" />
     <RootPropertyPathName Name="DetailsViewModel" />
     <RootPropertyPathName Name="Loaded" />
+    <RootPropertyPathName Name="TempOld" />
+    <RootPropertyPathName Name="VisibilityForControls" />
     <RootPropertyPathName Name="Old" />
+    <RootPropertyPathName Name="CanVisibility" />
+    <RootPropertyPathName Name="TempSalary" />
     <RootPropertyPathName Name="Salary" />
     <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="TempName" />
     <RootPropertyPathName Name="Id" />
-    <RootPropertyPathName Name="HomeViewModel" />
-    <RootPropertyPathName Name="LoginViewModel" />
+    <RootPropertyPathName Name="ComCancel" />
+    <RootPropertyPathName Name="ComAccept" />
+    <RootPropertyPathName Name="Edit" />
+    <RootPropertyPathName Name="CreateAccountViewModel" />
+    <RootPropertyPathName Name="ShowDataViewModel" />
+    <RootPropertyPathName Name="Unloaded_ShowData" />
+    <RootPropertyPathName Name="MouseEnterLayoutRoot" />
     <RootPropertyPathName Name="DataStuff" />
     <RootPropertyPathName Name="Click_Item" />
     <RootPropertyPathName Name="SelectedItem" />
-    <RootPropertyPathName Name="ID" />
     <RootPropertyPathName Name="RightTapped" />
-    <RootPropertyPathName Name="Click_ShowAllStuff" />
+    <RootPropertyPathName Name="ID" />
+    <RootPropertyPathName Name="Click_ResetDataStuff" />
     <RootPropertyPathName Name="Click_Add" />
     <RootPropertyPathName Name="MainViewModel" />
     <RootPropertyPathName Name="Click_SignIn" />
@@ -52,6 +65,8 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Text" />
       <RootProperty Name="Name" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="IsRightTapEnabled" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Foreground" />
     </RootType>
@@ -77,6 +92,7 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
       <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
       <RootProperty Name="ElementName" />
       <RootProperty Name="Path" />
     </RootType>
@@ -100,13 +116,15 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Name" />
+      <RootProperty Name="IsRightTapEnabled" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Command" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Content" />
+      <RootProperty Name="IsHoldingEnabled" />
+      <RootProperty Name="IsRightTapEnabled" />
       <RootProperty Name="Name" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
@@ -118,6 +136,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Visibility" />
       <RootMethod Name="GetAlignVerticalCenterWithPanel" />
       <RootMethod Name="SetAlignVerticalCenterWithPanel" />
       <RootMethod Name="GetAlignHorizontalCenterWithPanel" />
@@ -137,6 +156,8 @@
       <RootProperty Name="Text" />
       <RootProperty Name="InputScope" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />
       <RootProperty Name="PlaceholderText" />
@@ -156,12 +177,15 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
       <RootProperty Name="Command" />
+      <RootProperty Name="InputConverter" />
       <RootProperty Name="CommandParameter" />
+      <RootProperty Name="InputConverterParameter" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBar">
       <RootProperty Name="IsOpen" />
       <RootProperty Name="IsSticky" />
       <RootProperty Name="Content" />
+      <RootProperty Name="IsEnabled" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="IsEnabled" />
@@ -170,9 +194,22 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Demo_MvvmLight.Views.DetailsPage" />
-    <RootType FullName="Demo_MvvmLight.Views.HomePage" />
+    <RootType FullName="Demo_MvvmLight.Views.CreateAccountPage" />
+    <RootType FullName="Demo_MvvmLight.Converters.DefinePonter" />
+    <RootType FullName="Demo_MvvmLight.Converters.RightTapEvent" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
+      <RootProperty Name="Placement" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Primitives.FlyoutBase">
+      <RootMethod Name="GetAttachedFlyout" />
+      <RootMethod Name="SetAttachedFlyout" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="IsHoldingEnabled" />
+      <RootProperty Name="IsRightTapEnabled" />
       <RootProperty Name="ItemContainerStyle" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
@@ -180,6 +217,7 @@
       <RootMethod Name="GetVerticalScrollMode" />
       <RootMethod Name="SetVerticalScrollMode" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="HorizontalContentAlignment" />
@@ -187,8 +225,7 @@
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
-    <RootType FullName="Demo_MvvmLight.Views.LoginPage" />
+    <RootType FullName="Demo_MvvmLight.Views.ShowDataPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">
       <RootProperty Name="Content" />
     </RootType>

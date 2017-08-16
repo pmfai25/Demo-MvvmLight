@@ -60,6 +60,15 @@ namespace Demo_MvvmLight
         /// <param name="TargetStuff"></param>
         /// <returns></returns>
         Task<ArrayList> SearchAsync(string AddressDatabase, EChoice e, object obj, EinUser? TargetUser = null, EinStuff? TargetStuff = null);
-        
+
+        /// <summary>
+        /// Update a element that match the conditions defined 
+        /// </summary>
+        /// <param name="AddressDatabase"></param>
+        /// <param name="e"></param>
+        /// <param name="user"></param>
+        /// <param name="stuff"></param>
+        /// <returns></returns>
+        Task<bool> UpdateAsync(string AddressDatabase, EChoice e,object Target ,User user = null,  Stuff stuff = null);
     }
 }

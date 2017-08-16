@@ -150,7 +150,7 @@ namespace Demo_MvvmLight.ViewModels
             }
             if (People.Find(p => p.Name.Equals(TextTxbUser)).Pass.Equals(TextTxbPass))
             {
-                NavigationService.Navigate(typeof(LoginViewModel).ToString());
+                NavigationService.Navigate(typeof(ShowDataViewModel).ToString());
                 return true;
             }
             return false;

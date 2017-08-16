@@ -4,7 +4,7 @@ Styles\_FontSizes.xbf
 Styles\_Thickness.xbf
 Styles\TextBlock.xbf
 Views\AddStuffPage.xbf
+Views\CreateAccountPage.xbf
 Views\DetailsPage.xbf
-Views\HomePage.xbf
-Views\LoginPage.xbf
 Views\MainPage.xbf
+Views\ShowDataPage.xbf

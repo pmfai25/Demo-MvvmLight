@@ -25,8 +25,8 @@ namespace Demo_MvvmLight.ViewModels
             SimpleIoc.Default.Register(() => _sqlConnection,"sqlString");
             SimpleIoc.Default.Register(() => _navigationService);
             Register<MainViewModel, MainPage>();
-            Register<LoginViewModel, LoginPage>();
-            Register<HomeViewModel, HomePage>();
+            Register<ShowDataViewModel, ShowDataPage>();
+            Register<CreateAccountViewModel, CreateAccountPage>();
             Register<DetailsViewModel, DetailsPage>();
             Register<AddStuffViewModel, AddStuffPage>();
         }
@@ -36,9 +36,9 @@ namespace Demo_MvvmLight.ViewModels
         public DetailsViewModel DetailsViewModel => ServiceLocator.Current.GetInstance<DetailsViewModel>();
         
         
-        public HomeViewModel HomeViewModel => ServiceLocator.Current.GetInstance<HomeViewModel>();
+        public CreateAccountViewModel HomeViewModel => ServiceLocator.Current.GetInstance<CreateAccountViewModel>();
 
-        public LoginViewModel LoginViewModel => ServiceLocator.Current.GetInstance<LoginViewModel>();
+        public ShowDataViewModel ShowDataViewModel => ServiceLocator.Current.GetInstance<ShowDataViewModel>();
 
         public MainViewModel MainViewModel => ServiceLocator.Current.GetInstance<MainViewModel>();
 
