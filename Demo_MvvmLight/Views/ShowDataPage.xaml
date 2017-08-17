@@ -21,6 +21,7 @@
     <Page.Resources>
         <Conver:DefinePonter x:Key="PointMouse"/>
         <Conver:RightTapEvent x:Key="Righttap"/>
+        <Conver:HoldingTappedEvent x:Key="HoldingEvent"/>
         <Flyout x:Key="rightflyout" Placement="Right">
             <TextBlock Text="Hello"/>
         </Flyout>
@@ -48,16 +49,7 @@
                 Place your content here.-->
 
 
-            <i:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="PointerEntered">
-                    <core:InvokeCommandAction Command="{Binding MouseEnterLayoutRoot}"
-                                              InputConverter="{Binding Source={StaticResource PointMouse}}"/>
-                </core:EventTriggerBehavior>
-            </i:Interaction.Behaviors>
-
-
-
-
+            
 
             <StackPanel
                 Orientation="Vertical" x:Name="s">
@@ -68,9 +60,9 @@
                         IsRightTapEnabled="True" >
 
                     <i:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="RightTapped">
-                            <core:InvokeCommandAction Command="{Binding RightTapped}"
-                                                      InputConverter="{StaticResource Righttap}"
+                        <core:EventTriggerBehavior EventName="Holding">
+                            <core:InvokeCommandAction Command="{Binding HoldingTapped_Menu}"
+                                                      InputConverter="{StaticResource HoldingEvent}"
                                                      InputConverterParameter="{x:Bind Btn}"/>
                         </core:EventTriggerBehavior>
                     </i:Interaction.Behaviors>
@@ -83,13 +75,13 @@
                     ScrollViewer.VerticalScrollMode="Auto"                    
                     IsHitTestVisible="True"
                     IsHoldingEnabled="True"
-                    IsRightTapEnabled="True">
-
-
+                    IsRightTapEnabled="True"
+                    >
+                    
                     <i:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="RightTapped">
-                            <core:InvokeCommandAction Command="{Binding RightTapped}"
-                                                      InputConverter="{StaticResource Righttap}"
+                        <core:EventTriggerBehavior EventName="Holding">
+                            <core:InvokeCommandAction Command="{Binding HoldingTapped_Menu}"
+                                                      InputConverter="{StaticResource HoldingEvent}"
                                                       InputConverterParameter="{x:Bind LiV_Show}"
                                                       />
                         </core:EventTriggerBehavior>

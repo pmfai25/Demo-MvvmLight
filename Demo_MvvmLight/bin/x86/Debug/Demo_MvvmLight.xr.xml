@@ -27,12 +27,11 @@
     <RootPropertyPathName Name="Edit" />
     <RootPropertyPathName Name="CreateAccountViewModel" />
     <RootPropertyPathName Name="ShowDataViewModel" />
-    <RootPropertyPathName Name="Unloaded_ShowData" />
-    <RootPropertyPathName Name="MouseEnterLayoutRoot" />
+    <RootPropertyPathName Name="Loaded_ShowData" />
     <RootPropertyPathName Name="DataStuff" />
     <RootPropertyPathName Name="Click_Item" />
     <RootPropertyPathName Name="SelectedItem" />
-    <RootPropertyPathName Name="RightTapped" />
+    <RootPropertyPathName Name="HoldingTapped_Menu" />
     <RootPropertyPathName Name="ID" />
     <RootPropertyPathName Name="Click_ResetDataStuff" />
     <RootPropertyPathName Name="Click_Add" />
@@ -177,8 +176,8 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
       <RootProperty Name="Command" />
-      <RootProperty Name="InputConverter" />
       <RootProperty Name="CommandParameter" />
+      <RootProperty Name="InputConverter" />
       <RootProperty Name="InputConverterParameter" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBar">
@@ -197,6 +196,7 @@
     <RootType FullName="Demo_MvvmLight.Views.CreateAccountPage" />
     <RootType FullName="Demo_MvvmLight.Converters.DefinePonter" />
     <RootType FullName="Demo_MvvmLight.Converters.RightTapEvent" />
+    <RootType FullName="Demo_MvvmLight.Converters.HoldingTappedEvent" />
     <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
       <RootProperty Name="Placement" />
       <RootProperty Name="Content" />

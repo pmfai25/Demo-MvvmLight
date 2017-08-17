@@ -119,6 +119,7 @@
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Converters\DefinePonter.cs" />
+    <Compile Include="Converters\HoldingTappedEvent.cs" />
     <Compile Include="Converters\RightTapEvent.cs" />
     <Compile Include="Enum\EChoice.cs" />
     <Compile Include="Interfaces\IData.cs" />

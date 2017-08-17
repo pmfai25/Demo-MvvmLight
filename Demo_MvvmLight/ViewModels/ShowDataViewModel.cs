@@ -26,47 +26,53 @@ namespace Demo_MvvmLight.ViewModels
 {
     public class ShowDataViewModel : ViewModelBase
     {
-        
+
         private ICommand _click_Add;
         private ICommand _click_Item;
         private ICommand _click_ResetDataStuff;
         private IData _dataProviders;
-        private ObservableCollection< Stuff> _dataStuff;
+        private Stuff _holdingSelect;
+        private ObservableCollection<Stuff> _dataStuff;
         private string _addressData;
         private string _IdStuffPass;
-        private ICommand _rightTapped;
+        private ICommand _holdingTapped_Menu;
         private Point _mousePoint;
         private ICommand _mouseEnterLayoutRoot;
         private ICommand _loaded_ShowData;
 
-        public ShowDataViewModel(IData data )
+        public ShowDataViewModel(IData data)
         {
             this.DataProviders = data;
         }
-       
 
-        public ICommand Click_Add { get {
+
+        public ICommand Click_Add
+        {
+            get
+            {
                 _click_Add = new RelayCommand(() => { NavigationService.Navigate(typeof(AddStuffViewModel).FullName); });
                 return _click_Add;
             }
         }
 
-        public ICommand Click_ResetDataStuff {
+        public ICommand Click_ResetDataStuff
+        {
             get
             {
                 _click_ResetDataStuff = new RelayCommand(() =>
                 {
-                    
-                    DataStuff = new ObservableCollection< Stuff>(DataProviders.GetAllStuff(AddressData));
+
+                    DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
                     RaisePropertyChanged("DataStuff");
                     //RaisePropertyChanged("iD");
                 });
                 return _click_ResetDataStuff;
             }
         }
-        public ObservableCollection< Stuff> DataStuff { get => _dataStuff; set => _dataStuff = value; }
-        public IData DataProviders { get => _dataProviders;set => _dataProviders = value; }
-        public string AddressData {
+        public ObservableCollection<Stuff> DataStuff { get => _dataStuff; set => _dataStuff = value; }
+        public IData DataProviders { get => _dataProviders; set => _dataProviders = value; }
+        public string AddressData
+        {
             get
             {
                 _addressData = ServiceLocator.Current.GetInstance<string>("sqlString");
@@ -75,12 +81,15 @@ namespace Demo_MvvmLight.ViewModels
             set { _addressData = value; }
         }
 
-        public ICommand Click_Item { get {
+        public ICommand Click_Item
+        {
+            get
+            {
                 _click_Item = new RelayCommand<object>((p) =>
                 {
                     IdStuffPass = (p as Stuff).ID.ToString();
                     bool ischeck = SimpleIoc.Default.IsRegistered<string>("IdStuff");
-                    if (ischeck==false)
+                    if (ischeck == false)
                     {
                         SimpleIoc.Default.Register(() => IdStuffPass, "IdStuff");
                     }
@@ -89,15 +98,15 @@ namespace Demo_MvvmLight.ViewModels
                         SimpleIoc.Default.Unregister<string>("IdStuff");
                         SimpleIoc.Default.Register(() => IdStuffPass, "IdStuff");
                     }
-                    
+
                     NavigationService.Navigate(typeof(DetailsViewModel).FullName);
-                    
+
                 });
                 return _click_Item;
 
             }
         }
-       
+
         public NavigationServiceEx NavigationService
         {
             get
@@ -108,50 +117,44 @@ namespace Demo_MvvmLight.ViewModels
         }
 
         public string IdStuffPass { get => _IdStuffPass; set => _IdStuffPass = value; }
-        public ICommand RightTapped { get {
-                _rightTapped = new RelayCommand<Tuple<object,RightTappedRoutedEventArgs>>((p) => 
-                {
-                     var sender = p.Item1 as Button;
+        public ICommand HoldingTapped_Menu
+        {
+            get
+            {
+                _holdingTapped_Menu = new RelayCommand<Tuple<object, HoldingRoutedEventArgs>>((p) =>
+                 {
+                     var sender = p.Item1;
                      var e = p.Item2;
-                   
-                    // If you need the clicked element:
-                    // Item whichOne = senderElement.DataContext as Item;
 
-                    //var b = (ListViewItemPresenter)p.OriginalSource;
-                    //ListViewItem l =(ListViewItem) b.Content;
-                    //FlyoutBase.ShowAttachedFlyout(l);
-                    //a.ShowAt(b);
-                    //var UieleClollec = p.ItemsPanelRoot.Children;
-                    //UieleClollec.
-                    MenuFlyout MeFlyout = new MenuFlyout();
-                    MenuFlyoutItem MnFtItem = new MenuFlyoutItem()
-                    {
-                        Text = "About",
-                    };MeFlyout.Placement = FlyoutPlacementMode.Bottom;
-                    MeFlyout.Items.Add(MnFtItem);
-                    //Flyout a = new Flyout();
-                    MeFlyout.ShowAt(sender as UIElement, e.GetPosition(sender as UIElement));
-                    //MeFlyout.ShowAt(p as Grid, MousePoint);
-                    //int bug = 0;
-                    //m.ShowAt((FrameworkElement)p);
-                    //                     ContentDialog noWifiDialog = new ContentDialog
-                    //                     {
-                    //                         Title = "No wifi connection",
-                    //                         Content = "Check your connection and try again.",
-                    //                         
-                    //                         
-                    //                         
-                    //                     };
-                    // 
-                    //                     ContentDialogResult result = await noWifiDialog.ShowAsync();
-                });
-                return _rightTapped;
+
+                     MenuFlyout MeFlyout = new MenuFlyout();
+                     MenuFlyoutItem About = new MenuFlyoutItem()
+                     {
+                         Text = "About",
+                     };
+                     MenuFlyoutItem Delete = new MenuFlyoutItem() { Text = "Delete" };
+                     Delete.Tapped += DeleteHoldingMenu_TappedAsync;
+                     MeFlyout.Items.Add(About);
+                     MeFlyout.Items.Add(Delete);
+                     MeFlyout.ShowAt(sender as UIElement, e.GetPosition(sender as UIElement));
+                     HoldingSelect = e.OriginalSource is TextBlock ? ((e.OriginalSource as TextBlock).DataContext as Stuff) :
+                    ((e.OriginalSource as ListViewItemPresenter).DataContext as Stuff);
+                 });
+                return _holdingTapped_Menu;
             }
         }
 
-        public ICommand MouseEnterLayoutRoot { get
+        private async void DeleteHoldingMenu_TappedAsync(object sender, TappedRoutedEventArgs e)
+        {
+            bool check=await DataProviders.DeleteWithAsync(AddressData, Enum.EChoice.Stuff,HoldingSelect.ID, estuff: Enum.EinStuff.ID);
+            
+        }
+
+        public ICommand MouseEnterLayoutRoot
+        {
+            get
             {
-                _mouseEnterLayoutRoot = new RelayCommand<Point>((p) => 
+                _mouseEnterLayoutRoot = new RelayCommand<Point>((p) =>
                 {
                     MousePoint = p;
                 });
@@ -173,5 +176,7 @@ namespace Demo_MvvmLight.ViewModels
                 return _loaded_ShowData;
             }
         }
+
+        public Stuff HoldingSelect { get => _holdingSelect; set => _holdingSelect = value; }
     }
 }
