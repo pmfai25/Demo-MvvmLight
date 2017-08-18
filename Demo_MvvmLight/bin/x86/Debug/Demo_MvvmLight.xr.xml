@@ -29,11 +29,11 @@
     <RootPropertyPathName Name="ShowDataViewModel" />
     <RootPropertyPathName Name="Loaded_ShowData" />
     <RootPropertyPathName Name="DataStuff" />
+    <RootPropertyPathName Name="Click_ResetDataStuff" />
     <RootPropertyPathName Name="Click_Item" />
     <RootPropertyPathName Name="SelectedItem" />
     <RootPropertyPathName Name="HoldingTapped_Menu" />
     <RootPropertyPathName Name="ID" />
-    <RootPropertyPathName Name="Click_ResetDataStuff" />
     <RootPropertyPathName Name="Click_Add" />
     <RootPropertyPathName Name="MainViewModel" />
     <RootPropertyPathName Name="Click_SignIn" />
@@ -157,9 +157,9 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Style" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />
-      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
@@ -210,12 +210,21 @@
       <RootProperty Name="IsHitTestVisible" />
       <RootProperty Name="IsHoldingEnabled" />
       <RootProperty Name="IsRightTapEnabled" />
+      <RootProperty Name="Items" />
+      <RootProperty Name="Resources" />
       <RootProperty Name="ItemContainerStyle" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootMethod Name="GetVerticalScrollMode" />
       <RootMethod Name="SetVerticalScrollMode" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyout">
+      <RootProperty Name="Items" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutItem">
+      <RootProperty Name="Text" />
+      <RootProperty Name="IsTapEnabled" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />

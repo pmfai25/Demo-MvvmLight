@@ -30,15 +30,18 @@ namespace Demo_MvvmLight.ViewModels
         private ICommand _click_Add;
         private ICommand _click_Item;
         private ICommand _click_ResetDataStuff;
+        private ICommand _mouseEnterLayoutRoot;
+        private ICommand _loaded_ShowData;
+        private ICommand _menuClickDelete;
+        private ICommand _holdingTapped_Menu;
         private IData _dataProviders;
         private Stuff _holdingSelect;
         private ObservableCollection<Stuff> _dataStuff;
         private string _addressData;
         private string _IdStuffPass;
-        private ICommand _holdingTapped_Menu;
+
         private Point _mousePoint;
-        private ICommand _mouseEnterLayoutRoot;
-        private ICommand _loaded_ShowData;
+
 
         public ShowDataViewModel(IData data)
         {
@@ -125,30 +128,16 @@ namespace Demo_MvvmLight.ViewModels
                  {
                      var sender = p.Item1;
                      var e = p.Item2;
-
-
-                     MenuFlyout MeFlyout = new MenuFlyout();
-                     MenuFlyoutItem About = new MenuFlyoutItem()
-                     {
-                         Text = "About",
-                     };
-                     MenuFlyoutItem Delete = new MenuFlyoutItem() { Text = "Delete" };
-                     Delete.Tapped += DeleteHoldingMenu_TappedAsync;
-                     MeFlyout.Items.Add(About);
-                     MeFlyout.Items.Add(Delete);
-                     MeFlyout.ShowAt(sender as UIElement, e.GetPosition(sender as UIElement));
+                     //var MenuContext = (sender as ListView).Resources.Where(a => a.Key.ToString().Equals("A")).Single();
+                     //(MenuContext.Value as MenuFlyout).ShowAt(sender as ListView, e.GetPosition(sender as ListView));
                      HoldingSelect = e.OriginalSource is TextBlock ? ((e.OriginalSource as TextBlock).DataContext as Stuff) :
-                    ((e.OriginalSource as ListViewItemPresenter).DataContext as Stuff);
+                   ((e.OriginalSource as ListViewItemPresenter).DataContext as Stuff);
                  });
                 return _holdingTapped_Menu;
             }
         }
 
-        private async void DeleteHoldingMenu_TappedAsync(object sender, TappedRoutedEventArgs e)
-        {
-            bool check=await DataProviders.DeleteWithAsync(AddressData, Enum.EChoice.Stuff,HoldingSelect.ID, estuff: Enum.EinStuff.ID);
-            
-        }
+        
 
         public ICommand MouseEnterLayoutRoot
         {
@@ -178,5 +167,18 @@ namespace Demo_MvvmLight.ViewModels
         }
 
         public Stuff HoldingSelect { get => _holdingSelect; set => _holdingSelect = value; }
+        public ICommand MenuClickDelete
+        {
+            get
+            {
+                _menuClickDelete = new RelayCommand(async() =>
+                 {
+                     bool check = await DataProviders.DeleteWithAsync(AddressData, Enum.EChoice.Stuff, HoldingSelect.ID, estuff: Enum.EinStuff.ID);
+                     DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
+                     RaisePropertyChanged("DataStuff");
+                 });
+                return _menuClickDelete;
+            }
+        }
     }
 }

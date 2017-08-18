@@ -36,7 +36,7 @@ namespace Demo_MvvmLight.ViewModels
         public DetailsViewModel DetailsViewModel => ServiceLocator.Current.GetInstance<DetailsViewModel>();
         
         
-        public CreateAccountViewModel HomeViewModel => ServiceLocator.Current.GetInstance<CreateAccountViewModel>();
+        public CreateAccountViewModel CreateAccountViewModel => ServiceLocator.Current.GetInstance<CreateAccountViewModel>();
 
         public ShowDataViewModel ShowDataViewModel => ServiceLocator.Current.GetInstance<ShowDataViewModel>();
 

@@ -233,7 +233,6 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
 
         private object Activate_0_ViewModelLocator() { return new global::Demo_MvvmLight.ViewModels.ViewModelLocator(); }
         private object Activate_4_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
-        private object Activate_6_CreateAccountViewModel() { return new global::Demo_MvvmLight.ViewModels.CreateAccountViewModel(); }
         private object Activate_9_AddStuffPage() { return new global::Demo_MvvmLight.Views.AddStuffPage(); }
         private object Activate_13_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
         private object Activate_16_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
@@ -274,7 +273,7 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
                 userType.Activator = Activate_0_ViewModelLocator;
                 userType.AddMemberName("AddStuffViewModel");
                 userType.AddMemberName("DetailsViewModel");
-                userType.AddMemberName("HomeViewModel");
+                userType.AddMemberName("CreateAccountViewModel");
                 userType.AddMemberName("ShowDataViewModel");
                 userType.AddMemberName("MainViewModel");
                 userType.SetIsLocalType();
@@ -484,10 +483,10 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
             var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
             return that.DetailsViewModel;
         }
-        private object get_2_ViewModelLocator_HomeViewModel(object instance)
+        private object get_2_ViewModelLocator_CreateAccountViewModel(object instance)
         {
             var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
-            return that.HomeViewModel;
+            return that.CreateAccountViewModel;
         }
         private object get_3_ViewModelLocator_ShowDataViewModel(object instance)
         {
@@ -607,10 +606,10 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
                 xamlMember.Getter = get_1_ViewModelLocator_DetailsViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "Demo_MvvmLight.ViewModels.ViewModelLocator.HomeViewModel":
+            case "Demo_MvvmLight.ViewModels.ViewModelLocator.CreateAccountViewModel":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Demo_MvvmLight.ViewModels.ViewModelLocator");
-                xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "HomeViewModel", "Demo_MvvmLight.ViewModels.CreateAccountViewModel");
-                xamlMember.Getter = get_2_ViewModelLocator_HomeViewModel;
+                xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "CreateAccountViewModel", "Demo_MvvmLight.ViewModels.CreateAccountViewModel");
+                xamlMember.Getter = get_2_ViewModelLocator_CreateAccountViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Demo_MvvmLight.ViewModels.ViewModelLocator.ShowDataViewModel":
