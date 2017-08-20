@@ -47,7 +47,7 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
-            
+
             <StackPanel
                 Orientation="Vertical" x:Name="s">
 
@@ -74,20 +74,24 @@
                     IsHoldingEnabled="True"
                     IsRightTapEnabled="True"
                     >
-                    <MenuFlyout x:Name="A" >
-                            <MenuFlyoutItem Text="About"/>
-                            <MenuFlyoutItem Text="Delete" IsTapEnabled="True">
-                                <i:Interaction.Behaviors>
-                                    <core:EventTriggerBehavior EventName="Tapped">                                  
-                                        <core:InvokeCommandAction   Command="{Binding Click_ResetDataStuff}"
-                                                      />
-                                </core:EventTriggerBehavior>
-                                </i:Interaction.Behaviors>
 
-                            </MenuFlyoutItem>
-                        </MenuFlyout>
+
                     <ListView.Resources>
-                        
+                        <MenuFlyout x:Name="A" >
+                            <MenuFlyout.Items>
+                                
+                                <MenuFlyoutItem Text="About"/>
+                                <MenuFlyoutItem x:Name="CC" Text="Delete" IsTapEnabled="True" >
+                                    <i:Interaction.Behaviors>
+                                        <core:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=CC}">
+                                            <core:InvokeCommandAction   Command="{Binding MenuClickDelete}"/>
+                                        </core:EventTriggerBehavior>
+                                    </i:Interaction.Behaviors>
+                                </MenuFlyoutItem>
+                            </MenuFlyout.Items>
+
+
+                        </MenuFlyout>
 
                     </ListView.Resources>
 
@@ -120,7 +124,7 @@
                                         IsRightTapEnabled="True"
                                         >
 
-
+                                <CheckBox Content="{Binding ID}" />
                                 <TextBlock Text="{Binding  ID}"
                                            IsRightTapEnabled="True"/>
 

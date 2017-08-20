@@ -35,9 +35,13 @@ namespace Demo_MvvmLight.ViewModels
         {
             get
             {
-                _tapped_Ok = new RelayCommand(() =>
+                _tapped_Ok = new RelayCommand(async() =>
                 {
-                    DataProvider.Insert(AddressData, Enum.EChoice.User, user: UserData);
+                    UserData.Name = Name;
+                    UserData.NameOfUser = NameOfUser;
+                    UserData.Pass = Password;
+                    Task<bool> Insert=DataProvider.Insert(AddressData, Enum.EChoice.User, user: UserData);
+                    var check = await Insert;
                 });
                 return _tapped_Ok;
             }

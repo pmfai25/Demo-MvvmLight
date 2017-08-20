@@ -26,7 +26,7 @@ namespace Demo_MvvmLight.ViewModels
 {
     public class ShowDataViewModel : ViewModelBase
     {
-
+        #region variable
         private ICommand _click_Add;
         private ICommand _click_Item;
         private ICommand _click_ResetDataStuff;
@@ -37,18 +37,22 @@ namespace Demo_MvvmLight.ViewModels
         private IData _dataProviders;
         private Stuff _holdingSelect;
         private ObservableCollection<Stuff> _dataStuff;
+        private List<Stuff> _sttuffBeSelect;
+        private bool _isCheckAdmin;
+        private bool _isCheckSelectMode;
+        private string _userName;
         private string _addressData;
         private string _IdStuffPass;
-
         private Point _mousePoint;
-
+        #endregion
 
         public ShowDataViewModel(IData data)
         {
             this.DataProviders = data;
         }
+        #region Properties
 
-
+        # region Command
         public ICommand Click_Add
         {
             get
@@ -71,17 +75,6 @@ namespace Demo_MvvmLight.ViewModels
                 });
                 return _click_ResetDataStuff;
             }
-        }
-        public ObservableCollection<Stuff> DataStuff { get => _dataStuff; set => _dataStuff = value; }
-        public IData DataProviders { get => _dataProviders; set => _dataProviders = value; }
-        public string AddressData
-        {
-            get
-            {
-                _addressData = ServiceLocator.Current.GetInstance<string>("sqlString");
-                return _addressData;
-            }
-            set { _addressData = value; }
         }
 
         public ICommand Click_Item
@@ -109,35 +102,49 @@ namespace Demo_MvvmLight.ViewModels
 
             }
         }
-
-        public NavigationServiceEx NavigationService
-        {
-            get
-            {
-
-                return ServiceLocator.Current.GetInstance<NavigationServiceEx>();
-            }
-        }
-
-        public string IdStuffPass { get => _IdStuffPass; set => _IdStuffPass = value; }
         public ICommand HoldingTapped_Menu
         {
+
             get
             {
                 _holdingTapped_Menu = new RelayCommand<Tuple<object, HoldingRoutedEventArgs>>((p) =>
                  {
                      var sender = p.Item1;
                      var e = p.Item2;
-                     //var MenuContext = (sender as ListView).Resources.Where(a => a.Key.ToString().Equals("A")).Single();
-                     //(MenuContext.Value as MenuFlyout).ShowAt(sender as ListView, e.GetPosition(sender as ListView));
+                     var MenuContext = (sender as ListView).Resources.Where(a => a.Key.ToString().Equals("A")).Single();
+                     (MenuContext.Value as MenuFlyout).ShowAt(sender as ListView, e.GetPosition(sender as ListView));
                      HoldingSelect = e.OriginalSource is TextBlock ? ((e.OriginalSource as TextBlock).DataContext as Stuff) :
                    ((e.OriginalSource as ListViewItemPresenter).DataContext as Stuff);
                  });
                 return _holdingTapped_Menu;
             }
         }
+        public ICommand Loaded_ShowData
+        {
+            get
+            {
+                _loaded_ShowData = new RelayCommand(() =>
+                {
+                    DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
+                    RaisePropertyChanged("DataStuff");
+                });
+                return _loaded_ShowData;
+            }
+        }
 
-        
+        public ICommand MenuClickDelete
+        {
+            get
+            {
+                _menuClickDelete = new RelayCommand(async () =>
+                 {
+                     bool check = await DataProviders.DeleteWithAsync(AddressData, Enum.EChoice.Stuff, HoldingSelect.ID, estuff: Enum.EinStuff.ID);
+                     DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
+                     RaisePropertyChanged("DataStuff");
+                 });
+                return _menuClickDelete;
+            }
+        }
 
         public ICommand MouseEnterLayoutRoot
         {
@@ -152,33 +159,55 @@ namespace Demo_MvvmLight.ViewModels
             }
         }
 
-        public Point MousePoint { get => _mousePoint; set => _mousePoint = value; }
-        public ICommand Loaded_ShowData
+        #endregion
+
+        #region Other Properties
+        public ObservableCollection<Stuff> DataStuff { get => _dataStuff; set => _dataStuff = value; }
+        public IData DataProviders { get => _dataProviders; set => _dataProviders = value; }
+        public string AddressData
         {
             get
             {
-                _loaded_ShowData = new RelayCommand(() =>
-                {
-                    DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
-                    RaisePropertyChanged("DataStuff");
-                });
-                return _loaded_ShowData;
+                _addressData = ServiceLocator.Current.GetInstance<string>("sqlString");
+                return _addressData;
+            }
+            set { _addressData = value; }
+        }
+        public string IdStuffPass { get => _IdStuffPass; set => _IdStuffPass = value; }
+
+        public NavigationServiceEx NavigationService
+        {
+            get
+            {
+
+                return ServiceLocator.Current.GetInstance<NavigationServiceEx>();
             }
         }
 
+        public Point MousePoint { get => _mousePoint; set => _mousePoint = value; }
+
         public Stuff HoldingSelect { get => _holdingSelect; set => _holdingSelect = value; }
-        public ICommand MenuClickDelete
+
+        public bool IsCheckAdmin
         {
             get
             {
-                _menuClickDelete = new RelayCommand(async() =>
-                 {
-                     bool check = await DataProviders.DeleteWithAsync(AddressData, Enum.EChoice.Stuff, HoldingSelect.ID, estuff: Enum.EinStuff.ID);
-                     DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
-                     RaisePropertyChanged("DataStuff");
-                 });
-                return _menuClickDelete;
+                _isCheckAdmin = UserName.Equals("Admin");
+                return _isCheckAdmin;
             }
         }
+        public bool IsCheckSelectMode { get => _isCheckSelectMode; set => _isCheckSelectMode = value; }
+        public string UserName
+        {
+            get
+            {
+                _userName = ServiceLocator.Current.GetInstance<string>("UserName");
+                return _userName;
+            }
+        }
+
+        public List<Stuff> SttuffBeSelect { get => _sttuffBeSelect; set => _sttuffBeSelect = value; }
+        #endregion
+        #endregion
     }
 }

@@ -19,9 +19,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI;
 using System.Composition;
-using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Ioc;
 using Demo_MvvmLight.Enum;
-using SQLitePCL;
 using System.Diagnostics;
 
 namespace Demo_MvvmLight.ViewModels
@@ -30,8 +29,8 @@ namespace Demo_MvvmLight.ViewModels
     {
 
         #region variable
-              
-        
+
+        private string _username;
         private string textTxblWarn;
         private Brush borderWarn;
         private IData datasource;
@@ -43,7 +42,7 @@ namespace Demo_MvvmLight.ViewModels
 
         public MainViewModel(IData data)
         {
-           
+
             this.datasource = data;
             People = new List<User>();
         }
@@ -74,64 +73,85 @@ namespace Demo_MvvmLight.ViewModels
             }
         }
         #endregion
-#endregion
+        #endregion
 
         #region Properties 
         public string TextTxbUser { get => textTxbUser; set => textTxbUser = value; }
         public string TextTxbPass { get => textTxbPass; set => textTxbPass = value; }
-        
+
         #region Command
-        public ICommand Click_SignIn { get
+        public ICommand Click_SignIn
+        {
+            get
             {
                 click_SignIn = new RelayCommand(async () =>
                 {
                     //User user = new User() { Name = "f", NameOfUser = "f", Pass = "f" };
                     //bool ab= await datasource.Insert(_StringSql, Enum.EChoice.User, user: user);
-                    
-                    ArrayList a=await datasource.SearchAsync(_StringSql, EChoice.User, "123", TargetUser: EinUser.Password);
+
+                    ArrayList a = await datasource.SearchAsync(_StringSql, EChoice.User, "123", TargetUser: EinUser.Password);
                     //bool abc = await datasource.DeleteWithAsync(_StringSql, EChoice.User, "f", euser: EinUser.Name);
-                    
-                    if (SignIncommand()==false)
+
+                    if (SignIncommand() == false)
                     {
-                        
+
                         SolidColorBrush MyBrush = new SolidColorBrush(Colors.Red);
                         BorderWarn = MyBrush;
                         TextTxblWarn = "Your account or password is incorrect.\n";
                         RaisePropertyChanged("BorderForTxbUser");
                         RaisePropertyChanged("TextTxblWarn");
                     }
-                    
+
                     //SignIncommand();
                 });
                 return click_SignIn;
-            } }
+            }
+        }
         #endregion
         /// <summary>
         /// Boder for warn
         /// </summary>
-        public Brush BorderWarn { get {
-                if (borderWarn==null)
+        public Brush BorderWarn
+        {
+            get
+            {
+                if (borderWarn == null)
                 {
                     var MyBrush = new SolidColorBrush(Colors.White);
                     borderWarn = MyBrush;
                     return borderWarn;
                 }
                 else
-                {                    
+                {
                     return borderWarn;
                 }
-                
 
-            } set { borderWarn = value; } }
+
+            }
+            set { borderWarn = value; }
+        }
 
         public string TextTxblWarn { get => textTxblWarn; set => textTxblWarn = value; }
+        public string Username
+        {
+            get => _username;
+            set
+            {
+                if (SimpleIoc.Default.IsRegistered<string>("UserName"))
+                {
+                    SimpleIoc.Default.Unregister<string>("UserName");
+                }
+                SimpleIoc.Default.Register(() => value, "UserName");
+                _username = value;
+            }
+        }
 
 
         #endregion
 
 
         #region Method for command
-        
+
         /// <summary>
         ///Check Password and User Name not null
         ///and people is exist or not exist
@@ -139,17 +159,18 @@ namespace Demo_MvvmLight.ViewModels
         /// <returns></returns>
         bool SignIncommand()
         {
-            if (TextTxbPass==null||TextTxbUser==null)
-            {
-                return false;
-            }
             People = datasource.GetAllUser(_StringSql).ToList();
-            if (People.Exists(p=>p.Name.Equals(TextTxbUser))==false)
+            if (TextTxbPass == null || TextTxbUser == null)
             {
                 return false;
             }
-            if (People.Find(p => p.Name.Equals(TextTxbUser)).Pass.Equals(TextTxbPass))
+            else if (People.Exists(p => p.Name.Equals(TextTxbUser)) == false)
             {
+                return false;
+            }
+            else if (People.Find(p => p.Name.Equals(TextTxbUser)).Pass.Equals(TextTxbPass))
+            {
+                Username = TextTxbUser;
                 NavigationService.Navigate(typeof(ShowDataViewModel).ToString());
                 return true;
             }

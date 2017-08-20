@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-18T15:43:51.979</Modified>
+      <Modified>2017-08-19T06:01:07.588</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.exe">
       <PackagePath>entrypoint\Demo_MvvmLight.exe</PackagePath>
-      <Modified>2017-08-18T15:41:57.847</Modified>
+      <Modified>2017-08-19T06:01:05.436</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tran\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -599,7 +599,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Demo_MvvmLight.xr.xml">
       <PackagePath>Demo_MvvmLight.xr.xml</PackagePath>
-      <Modified>2017-08-18T15:41:57.467</Modified>
+      <Modified>2017-08-19T06:01:04.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -608,11 +608,11 @@
     <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-18T15:43:50.376</Modified>
+      <Modified>2017-08-19T06:01:06.480</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Core\Demo_MvvmLight.exe">
       <PackagePath>Demo_MvvmLight.exe</PackagePath>
-      <Modified>2017-08-18T15:43:51.972</Modified>
+      <Modified>2017-08-19T06:01:07.576</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
