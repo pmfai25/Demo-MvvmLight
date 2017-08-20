@@ -189,7 +189,15 @@ namespace Demo_MvvmLight.Services
                     {
                         return false;
                     }
-                    if (stuff != null && stuff.ID != null && stuff.Name != null && stuff.Old != null && stuff.Salary != null)
+                    else if (String.IsNullOrWhiteSpace(stuff.ID)|| String.IsNullOrWhiteSpace(stuff.Name) || String.IsNullOrWhiteSpace(stuff.Old) || String.IsNullOrWhiteSpace(stuff.Salary) )
+                    {
+                        return false;
+                    }
+                    else if (String.IsNullOrEmpty(stuff.ID)|| String.IsNullOrEmpty(stuff.Name)|| String.IsNullOrEmpty(stuff.Old)|| String.IsNullOrEmpty(stuff.Salary))
+                    {
+                        return false;
+                    }
+                    else if (stuff != null )
                     {
                         string query = $"INSERT INTO Stuff VALUES ('{stuff.ID}','{stuff.Name.ToString()}','{stuff.Old}','{stuff.Salary}')";
                         result = db.Prepare(query).Step();
@@ -244,7 +252,7 @@ namespace Demo_MvvmLight.Services
         {
             return await Task.Run(() =>
             {
-                using (var db=new SQLiteConnection(AddressDatabase))
+                using (var db = new SQLiteConnection(AddressDatabase))
                 {
                     string query = String.Empty;
                     var result = SQLiteResult.EMPTY;
@@ -252,9 +260,9 @@ namespace Demo_MvvmLight.Services
                     {
                         query = $"UPDATE  Stuff SET Name ='{stuff.Name}' , Salary = '{stuff.Salary}' , Old = '{stuff.Old}' WHERE ID LIKE '{stuff.ID}'";
                         result = db.Prepare(query).Step();
-                        if (result==SQLiteResult.DONE)
+                        if (result == SQLiteResult.DONE)
                         {
-                            return true; 
+                            return true;
                         }
                     }
                     else if (EChoice.User.Equals(e))
@@ -270,7 +278,7 @@ namespace Demo_MvvmLight.Services
 
                     return false;
                 }
-                
+
             });
 
 

@@ -34,16 +34,21 @@ namespace Demo_MvvmLight.ViewModels
         private ICommand _loaded_ShowData;
         private ICommand _menuClickDelete;
         private ICommand _holdingTapped_Menu;
+        private ICommand _tapped_SelectMode;
+        private ICommand _MultiDelete;
         private IData _dataProviders;
         private Stuff _holdingSelect;
         private ObservableCollection<Stuff> _dataStuff;
-        private List<Stuff> _sttuffBeSelect;
+        private List<Stuff> _stuffBeSelect;
         private bool _isCheckAdmin;
-        private bool _isCheckSelectMode;
+        private ListViewSelectionMode _checkSelectionMode;
+        private bool _isCheckMultiChechkBoxSelectMode;
         private string _userName;
         private string _addressData;
         private string _IdStuffPass;
         private Point _mousePoint;
+
+
         #endregion
 
         public ShowDataViewModel(IData data)
@@ -83,23 +88,21 @@ namespace Demo_MvvmLight.ViewModels
             {
                 _click_Item = new RelayCommand<object>((p) =>
                 {
-                    IdStuffPass = (p as Stuff).ID.ToString();
-                    bool ischeck = SimpleIoc.Default.IsRegistered<string>("IdStuff");
-                    if (ischeck == false)
-                    {
-                        SimpleIoc.Default.Register(() => IdStuffPass, "IdStuff");
-                    }
-                    else
-                    {
-                        SimpleIoc.Default.Unregister<string>("IdStuff");
-                        SimpleIoc.Default.Register(() => IdStuffPass, "IdStuff");
-                    }
 
-                    NavigationService.Navigate(typeof(DetailsViewModel).FullName);
+                    if (IsCheckMultiChechkBoxSelectMode == false)
+                    {
+                        IdStuffPass = (p as Stuff).ID.ToString();
+                        bool ischeck = SimpleIoc.Default.IsRegistered<string>("IdStuff");
+                        if (ischeck)
+                        {
+                            SimpleIoc.Default.Unregister<string>("IdStuff");
+                        }
+                        SimpleIoc.Default.Register(() => IdStuffPass, "IdStuff");
+                        NavigationService.Navigate(typeof(DetailsViewModel).FullName);
+                    }
 
                 });
                 return _click_Item;
-
             }
         }
         public ICommand HoldingTapped_Menu
@@ -125,6 +128,10 @@ namespace Demo_MvvmLight.ViewModels
             {
                 _loaded_ShowData = new RelayCommand(() =>
                 {
+                    CheckSelectionMode = ListViewSelectionMode.Single;
+                    IsCheckMultiChechkBoxSelectMode = false;
+                    RaisePropertyChanged("IsCheckMultiChechkBoxSelectMode");
+                    RaisePropertyChanged("CheckSelectionMode");
                     DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
                     RaisePropertyChanged("DataStuff");
                 });
@@ -159,6 +166,23 @@ namespace Demo_MvvmLight.ViewModels
             }
         }
 
+        public ICommand Tapped_SelectMode
+        {
+            get
+            {
+                _tapped_SelectMode = new RelayCommand(() =>
+                {
+
+                    IsCheckMultiChechkBoxSelectMode = !IsCheckMultiChechkBoxSelectMode;
+                    CheckSelectionMode = IsCheckMultiChechkBoxSelectMode ? ListViewSelectionMode.Multiple : ListViewSelectionMode.Single;
+                    RaisePropertyChanged("IsCheckMultiChechkBoxSelectMode");
+                    RaisePropertyChanged("CheckSelectionMode");
+
+
+                });
+                return _tapped_SelectMode;
+            }
+        }
         #endregion
 
         #region Other Properties
@@ -196,7 +220,7 @@ namespace Demo_MvvmLight.ViewModels
                 return _isCheckAdmin;
             }
         }
-        public bool IsCheckSelectMode { get => _isCheckSelectMode; set => _isCheckSelectMode = value; }
+        public bool IsCheckMultiChechkBoxSelectMode { get => _isCheckMultiChechkBoxSelectMode; set => _isCheckMultiChechkBoxSelectMode = value; }
         public string UserName
         {
             get
@@ -206,7 +230,23 @@ namespace Demo_MvvmLight.ViewModels
             }
         }
 
-        public List<Stuff> SttuffBeSelect { get => _sttuffBeSelect; set => _sttuffBeSelect = value; }
+        public List<Stuff> StuffBeSelect { get => _stuffBeSelect; set => _stuffBeSelect = value; }
+        public ListViewSelectionMode CheckSelectionMode { get => _checkSelectionMode; set => _checkSelectionMode = value; }
+        public ICommand MultiDelete
+        {
+            get
+            {
+                _MultiDelete = new RelayCommand<ListView>((p) =>
+                {
+                    p.SelectedItems.ToList().ForEach((t) =>
+                    {
+
+                    });
+                });
+                return _MultiDelete;
+            }
+        }
+
         #endregion
         #endregion
     }

@@ -1,12 +1,20 @@
-﻿
-    <Page
+﻿<Page
     x:Class="Demo_MvvmLight.Views.AddStuffPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     DataContext="{Binding AddStuffViewModel, Source={StaticResource Locator}}"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core">
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding ResetData}"
+                                              />
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+
     <Grid x:ConnectionId='1'
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
@@ -30,13 +38,45 @@
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
+                
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
+            <RelativePanel Grid.Row="0"
+                           Visibility="{Binding GetVisibility,UpdateSourceTrigger=PropertyChanged}"
+                           Height="60"
+                           Width="300"
+                           VerticalAlignment="Top">
+                <Ellipse Width="300" Height="60" Fill="{Binding GetColor,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock x:ConnectionId='16' x:Name="Txbl_OK"
+                           Text="{Binding GetMess}"
+                           RelativePanel.AlignHorizontalCenterWithPanel="True"
+                           RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <TextBlock x:ConnectionId='17' x:Name="Temp"
+                           
+                           Width="50"
+                           Height="50"
+                           RelativePanel.AlignVerticalCenterWith="Elp_Accept"
+                           RelativePanel.AlignHorizontalCenterWith="Elp_Accept"/>
+                <Ellipse x:ConnectionId='18' Width="50"
+                         x:Name="Elp_Accept"
+                         RelativePanel.LeftOf="Txbl_OK"
+                         RelativePanel.AlignVerticalCenterWithPanel="True"
+                         Height="50"
+                         Fill="{Binding GetColor}"
+                         />
+                
+                <FontIcon FontFamily="Segoe MDL2 Assets"
+                          FontSize="45"
+                          Glyph="{Binding GetGlyph}"
+                          RelativePanel.AlignVerticalCenterWith="Elp_Accept"
+                          RelativePanel.AlignHorizontalCenterWith="Elp_Accept"/>
+            </RelativePanel>
+                <Grid Grid.Row="0">
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
+               
                 <Grid Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -71,7 +111,7 @@
                     </StackPanel>
 
                 </Grid>
-                
+
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -83,7 +123,7 @@
                         >
                         <RelativePanel HorizontalAlignment="Stretch">
                             <TextBlock Text="Old" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Leftrl0"/>
-                            <TextBlock x:ConnectionId='8' x:Name="Leftrl0" RelativePanel.AlignLeftWithPanel="True" Width="100"/>                            
+                            <TextBlock x:ConnectionId='8' x:Name="Leftrl0" RelativePanel.AlignLeftWithPanel="True" Width="100"/>
                             <TextBox x:ConnectionId='9' x:Name="Txb_Old"
                                      Text="{Binding Txb_Old,Mode=TwoWay}"
                                      InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
@@ -93,7 +133,7 @@
                                 VerticalAlignment="Center">
                         <RelativePanel HorizontalAlignment="Stretch">
                             <TextBlock Text="Salary" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignRightWith="Leftrl1"/>
-                            <TextBlock x:ConnectionId='6' x:Name="Leftrl1" RelativePanel.AlignLeftWithPanel="True" Width="100"/>                            
+                            <TextBlock x:ConnectionId='6' x:Name="Leftrl1" RelativePanel.AlignLeftWithPanel="True" Width="100"/>
                             <TextBox x:ConnectionId='7' x:Name="Txb_Salary"
                                      Text="{Binding Txb_Salary,Mode=TwoWay}"
                                      InputScope="Number" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="300"/>
@@ -124,7 +164,7 @@
                 </StackPanel>
             </Grid>
         </Grid>
-        </Grid>
+    </Grid>
 
 </Page>
 

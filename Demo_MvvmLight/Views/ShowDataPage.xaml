@@ -54,32 +54,28 @@
                 <Button x:Name="Btn"
                         Content="Hello"
                         IsHoldingEnabled="True"
-                        IsRightTapEnabled="True" >
-
-                    <i:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="Holding">
-                            <core:InvokeCommandAction Command="{Binding HoldingTapped_Menu}"
-                                                      InputConverter="{StaticResource HoldingEvent}"
-                                                     InputConverterParameter="{x:Bind Btn}"/>
-                        </core:EventTriggerBehavior>
-                    </i:Interaction.Behaviors>
+                        IsRightTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                        Command="{Binding Click_Item}"
+                        CommandParameter="{x:Bind LiV_Show}">
 
                 </Button>
 
                 <ListView 
                     x:Name="LiV_Show"
                     ItemsSource="{Binding DataStuff}"
-                    ScrollViewer.VerticalScrollMode="Auto"                    
+                    ScrollViewer.HorizontalScrollMode="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible"
+                    ScrollViewer.VerticalScrollMode="Enabled"                    
                     IsHitTestVisible="True"
                     IsHoldingEnabled="True"
                     IsRightTapEnabled="True"
-                    >
-
+                    IsMultiSelectCheckBoxEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                    SelectionMode="{Binding CheckSelectionMode}" >
 
                     <ListView.Resources>
                         <MenuFlyout x:Name="A" >
                             <MenuFlyout.Items>
-                                
+
                                 <MenuFlyoutItem Text="About"/>
                                 <MenuFlyoutItem x:Name="CC" Text="Delete" IsTapEnabled="True" >
                                     <i:Interaction.Behaviors>
@@ -95,7 +91,6 @@
 
                     </ListView.Resources>
 
-
                     <i:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Holding">
                             <core:InvokeCommandAction Command="{Binding HoldingTapped_Menu}"
@@ -106,25 +101,16 @@
                         <core:EventTriggerBehavior EventName="Tapped">
 
                             <core:InvokeCommandAction   Command="{Binding Click_Item}"
-                                                      CommandParameter="{Binding ElementName=LiV_Show,Path= SelectedItem}"/>
+                                                      CommandParameter="{Binding Path=SelectedItem, ElementName=LiV_Show}"/>
                         </core:EventTriggerBehavior>
                     </i:Interaction.Behaviors>
 
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment"
-                                    Value="Stretch"/>
-                        </Style>
-                    </ListView.ItemContainerStyle>
-
                     <ListView.ItemTemplate>
-                        <DataTemplate >
+                        <DataTemplate>
 
                             <StackPanel Orientation="Horizontal"
-                                        IsRightTapEnabled="True"
-                                        >
+                                        IsRightTapEnabled="True">
 
-                                <CheckBox Content="{Binding ID}" />
                                 <TextBlock Text="{Binding  ID}"
                                            IsRightTapEnabled="True"/>
 
@@ -137,16 +123,11 @@
                                 <TextBlock Margin="50,0,0,0"
                                            Text="{Binding Salary}"/>
                             </StackPanel>
-
-
-
                         </DataTemplate>
                     </ListView.ItemTemplate>
-
                 </ListView>
 
             </StackPanel>
-
 
         </Grid>
     </Grid>
@@ -175,7 +156,30 @@
                                RelativePanel.AlignHorizontalCenterWithPanel="True"
                                RelativePanel.AlignBottomWithPanel="True"/>
                 </RelativePanel>
+                <AppBarButton x:Name="BridgeCheckBox" Background="Red" IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}" IsTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"/>
+                <RelativePanel >
+                    <AppBarButton
+                        x:Name="AppbBtn_SelectMode"
+                        Icon="List"
+                        Command="{Binding Tapped_SelectMode}" />
+                    <TextBlock Text="Select Menu"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
+                <RelativePanel>
+                    <AppBarButton
+                        IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                        x:Name="AppbBtn_Delete"
+                        Icon="Delete"
+                        Content="Delete"
+                        Command="{Binding MultiDelete}"
+                        CommandParameter="{x:Bind LiV_Show}"/>
+                    <TextBlock Text="Delete"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+
+                </RelativePanel>
 
             </StackPanel>
         </AppBar>

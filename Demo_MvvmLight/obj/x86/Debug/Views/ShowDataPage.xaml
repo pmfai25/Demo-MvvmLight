@@ -43,13 +43,10 @@
 
         <Grid x:ConnectionId='5' x:Name="LayoutRoot"
             Grid.Row="1" 
-            FlyoutBase.AttachedFlyout="{Binding Source={StaticResource rightflyout}}"
+            
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
-
-
-            
 
             <StackPanel x:ConnectionId='6'
                 Orientation="Vertical" x:Name="s">
@@ -57,30 +54,46 @@
                 <Button x:ConnectionId='7' x:Name="Btn"
                         Content="Hello"
                         IsHoldingEnabled="True"
-                        IsRightTapEnabled="True" >
-
-                    <i:Interaction.Behaviors>
-                        <core:EventTriggerBehavior EventName="Holding">
-                            <core:InvokeCommandAction x:ConnectionId='10' Command="{Binding HoldingTapped_Menu}"
-                                                      InputConverter="{StaticResource HoldingEvent}"
-                                                                                           />
-                        </core:EventTriggerBehavior>
-                    </i:Interaction.Behaviors>
+                        IsRightTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                        Command="{Binding Click_Item}"
+                                                            >
 
                 </Button>
 
                 <ListView x:ConnectionId='8' 
                     x:Name="LiV_Show"
                     ItemsSource="{Binding DataStuff}"
-                    ScrollViewer.VerticalScrollMode="Auto"                    
+                    ScrollViewer.HorizontalScrollMode="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible"
+                    ScrollViewer.VerticalScrollMode="Enabled"                    
                     IsHitTestVisible="True"
                     IsHoldingEnabled="True"
                     IsRightTapEnabled="True"
-                    >
-                    
+                    IsMultiSelectCheckBoxEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                    SelectionMode="{Binding CheckSelectionMode}" >
+
+                    <ListView.Resources>
+                        <MenuFlyout x:ConnectionId='9' x:Name="A" >
+                            <MenuFlyout.Items>
+
+                                <MenuFlyoutItem Text="About"/>
+                                <MenuFlyoutItem x:ConnectionId='10' x:Name="CC" Text="Delete" IsTapEnabled="True" >
+                                    <i:Interaction.Behaviors>
+                                        <core:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=CC}">
+                                            <core:InvokeCommandAction   Command="{Binding MenuClickDelete}"/>
+                                        </core:EventTriggerBehavior>
+                                    </i:Interaction.Behaviors>
+                                </MenuFlyoutItem>
+                            </MenuFlyout.Items>
+
+
+                        </MenuFlyout>
+
+                    </ListView.Resources>
+
                     <i:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="Holding">
-                            <core:InvokeCommandAction x:ConnectionId='9' Command="{Binding HoldingTapped_Menu}"
+                            <core:InvokeCommandAction x:ConnectionId='11' Command="{Binding HoldingTapped_Menu}"
                                                       InputConverter="{StaticResource HoldingEvent}"
                                                                                                  
                                                       />
@@ -88,25 +101,15 @@
                         <core:EventTriggerBehavior EventName="Tapped">
 
                             <core:InvokeCommandAction   Command="{Binding Click_Item}"
-                                                      CommandParameter="{Binding ElementName=LiV_Show,Path= SelectedItem}"/>
+                                                      CommandParameter="{Binding Path=SelectedItem, ElementName=LiV_Show}"/>
                         </core:EventTriggerBehavior>
                     </i:Interaction.Behaviors>
 
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment"
-                                    Value="Stretch"/>
-                        </Style>
-                    </ListView.ItemContainerStyle>
-
                     <ListView.ItemTemplate>
-                        <DataTemplate >
+                        <DataTemplate>
 
                             <StackPanel Orientation="Horizontal"
-                                        IsRightTapEnabled="True"
-                                        >
-
-
+                                        IsRightTapEnabled="True">
 
                                 <TextBlock Text="{Binding  ID}"
                                            IsRightTapEnabled="True"/>
@@ -120,16 +123,11 @@
                                 <TextBlock Margin="50,0,0,0"
                                            Text="{Binding Salary}"/>
                             </StackPanel>
-
-
-
                         </DataTemplate>
                     </ListView.ItemTemplate>
-
                 </ListView>
 
             </StackPanel>
-
 
         </Grid>
     </Grid>
@@ -139,7 +137,7 @@
                 IsEnabled="True" >
             <StackPanel Orientation="Horizontal">
                 <RelativePanel>
-                    <AppBarButton x:ConnectionId='12'
+                    <AppBarButton x:ConnectionId='16'
                         x:Name="AppbBtn_Add"
                         Content="Add"
                         Icon="Add"
@@ -150,7 +148,7 @@
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
                 <RelativePanel>
-                    <AppBarButton x:ConnectionId='11'                    
+                    <AppBarButton x:ConnectionId='15'                    
                         x:Name="AppbBtn_Show"
                         Command="{Binding Click_ResetDataStuff}"
                         Icon="Sync"/>
@@ -158,7 +156,30 @@
                                RelativePanel.AlignHorizontalCenterWithPanel="True"
                                RelativePanel.AlignBottomWithPanel="True"/>
                 </RelativePanel>
+                <AppBarButton x:ConnectionId='12' x:Name="BridgeCheckBox" Background="Red" IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}" IsTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"/>
+                <RelativePanel >
+                    <AppBarButton x:ConnectionId='14'
+                        x:Name="AppbBtn_SelectMode"
+                        Icon="List"
+                        Command="{Binding Tapped_SelectMode}" />
+                    <TextBlock Text="Select Menu"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
+                <RelativePanel>
+                    <AppBarButton x:ConnectionId='13'
+                        IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                        x:Name="AppbBtn_Delete"
+                        Icon="Delete"
+                        Content="Delete"
+                        Command="{Binding MultiDelete}"
+                                                            />
+                    <TextBlock Text="Delete"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+
+                </RelativePanel>
 
             </StackPanel>
         </AppBar>
