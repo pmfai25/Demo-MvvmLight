@@ -269,4 +269,9 @@ C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLigh
 C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\ShowDataPage.xaml
 C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\CreateAccountPage.xbf
 C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\ShowDataPage.xbf
+C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Debug\Views\ShowAccountPage.xbf
+C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\ShowAccountPage.g.i.cs
+C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\ShowAccountPage.g.cs
+C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\ShowAccountPage.xaml
+C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Views\ShowAccountPage.xbf
 C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Debug\Demo_MvvmLight.csprojResolveAssemblyReference.cache

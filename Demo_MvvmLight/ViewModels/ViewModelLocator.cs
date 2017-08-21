@@ -1,4 +1,3 @@
-
 using Demo_MvvmLight.Services;
 using Demo_MvvmLight.Views;
 
@@ -29,7 +28,10 @@ namespace Demo_MvvmLight.ViewModels
             Register<CreateAccountViewModel, CreateAccountPage>();
             Register<DetailsViewModel, DetailsPage>();
             Register<AddStuffViewModel, AddStuffPage>();
+            Register<ShowAccountViewModel, ShowAccountPage>();
         }
+
+        public ShowAccountViewModel ShowAccountViewModel => ServiceLocator.Current.GetInstance<ShowAccountViewModel>();
 
         public AddStuffViewModel AddStuffViewModel => ServiceLocator.Current.GetInstance<AddStuffViewModel>();
 

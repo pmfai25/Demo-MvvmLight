@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.ServiceLocation;
 using Demo_MvvmLight.Models;
+using Windows.UI.Xaml.Controls;
 
 namespace Demo_MvvmLight.ViewModels
 {
@@ -22,6 +23,7 @@ namespace Demo_MvvmLight.ViewModels
         private IData _dataProvider;
         private string _addressData;
         private User _userData;
+        private ICommand _resetData;
 
         public CreateAccountViewModel(IData data)
         {
@@ -35,13 +37,21 @@ namespace Demo_MvvmLight.ViewModels
         {
             get
             {
-                _tapped_Ok = new RelayCommand(async() =>
+                _tapped_Ok = new RelayCommand(async () =>
                 {
                     UserData.Name = Name;
                     UserData.NameOfUser = NameOfUser;
                     UserData.Pass = Password;
-                    Task<bool> Insert=DataProvider.Insert(AddressData, Enum.EChoice.User, user: UserData);
+                    Task<bool> Insert = DataProvider.Insert(AddressData, Enum.EChoice.User, user: UserData);
                     var check = await Insert;
+                    string content = check ? "OK" : "Error";
+                    ContentDialog dialog = new ContentDialog()
+                    {
+                        Title= "Notifications",
+                        Content=content,
+                        CloseButtonText="OK"
+                    };
+                    ContentDialogResult result = await dialog.ShowAsync();
                 });
                 return _tapped_Ok;
             }
@@ -57,5 +67,21 @@ namespace Demo_MvvmLight.ViewModels
             set { _addressData = value; }
         }
         public User UserData { get => _userData; set => _userData = value; }
+        public ICommand ResetData
+        {
+            get
+            {
+                _resetData = new RelayCommand(() =>
+                {
+                    Name = String.Empty;
+                    NameOfUser = String.Empty;
+                    Password = String.Empty;
+                    RaisePropertyChanged("Name");
+                    RaisePropertyChanged("NameOfUser");
+                    RaisePropertyChanged("Password");
+                });
+                return _resetData;
+            }
+        }
     }
 }

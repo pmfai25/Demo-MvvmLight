@@ -68,7 +68,8 @@ namespace Demo_MvvmLight
     
         private ActivationService CreateActivationService()
         {
-            return new ActivationService(this, typeof(ViewModels.ShowDataViewModel));
+            return new ActivationService(this, typeof(ViewModels.ShowAccountViewModel));
+            //return new ActivationService(this, typeof(ViewModels.ShowDataViewModel));
             //return new ActivationService(this, typeof(ViewModels.MainViewModel));
         }
     }

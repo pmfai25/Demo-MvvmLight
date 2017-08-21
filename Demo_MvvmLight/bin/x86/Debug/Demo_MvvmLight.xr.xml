@@ -34,10 +34,18 @@
     <RootPropertyPathName Name="Tapped_Ok" />
     <RootPropertyPathName Name="NameOfUser" />
     <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="ShowAccountViewModel" />
+    <RootPropertyPathName Name="AccountUser" />
+    <RootPropertyPathName Name="IsCheckMultiChechkBoxSelectMode" />
+    <RootPropertyPathName Name="ListViewShowSelectionMode" />
+    <RootPropertyPathName Name="Pass" />
+    <RootPropertyPathName Name="Width" />
+    <RootPropertyPathName Name="ShowSelectionMode" />
+    <RootPropertyPathName Name="DeleteSpecificData" />
+    <RootPropertyPathName Name="ShowData" />
     <RootPropertyPathName Name="ShowDataViewModel" />
     <RootPropertyPathName Name="Loaded_ShowData" />
     <RootPropertyPathName Name="DataStuff" />
-    <RootPropertyPathName Name="IsCheckMultiChechkBoxSelectMode" />
     <RootPropertyPathName Name="CheckSelectionMode" />
     <RootPropertyPathName Name="MenuClickDelete" />
     <RootPropertyPathName Name="Click_Item" />
@@ -81,6 +89,7 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="TextAlignment" />
       <RootProperty Name="IsRightTapEnabled" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Foreground" />
@@ -112,8 +121,8 @@
       <RootProperty Name="Source" />
       <RootProperty Name="Mode" />
       <RootProperty Name="UpdateSourceTrigger" />
-      <RootProperty Name="ElementName" />
       <RootProperty Name="Path" />
+      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
       <RootProperty Name="EventName" />
@@ -227,29 +236,34 @@
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="Icon" />
       <RootProperty Name="Command" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="IsTapEnabled" />
       <RootProperty Name="Content" />
       <RootProperty Name="CommandParameter" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="IsTapEnabled" />
     </RootType>
     <RootType FullName="Demo_MvvmLight.Views.DetailsPage" />
     <RootType FullName="Demo_MvvmLight.Views.CreateAccountPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="IsMultiSelectCheckBoxEnabled" />
+      <RootProperty Name="SelectionMode" />
+      <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="IsHoldingEnabled" />
+      <RootProperty Name="IsRightTapEnabled" />
+      <RootProperty Name="Resources" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
+    <RootType FullName="Demo_MvvmLight.Views.ShowAccountPage" />
     <RootType FullName="Demo_MvvmLight.Converters.DefinePonter" />
     <RootType FullName="Demo_MvvmLight.Converters.RightTapEvent" />
     <RootType FullName="Demo_MvvmLight.Converters.HoldingTappedEvent" />
     <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
       <RootProperty Name="Placement" />
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="IsHitTestVisible" />
-      <RootProperty Name="IsHoldingEnabled" />
-      <RootProperty Name="IsRightTapEnabled" />
-      <RootProperty Name="IsMultiSelectCheckBoxEnabled" />
-      <RootProperty Name="SelectionMode" />
-      <RootProperty Name="Resources" />
-      <RootProperty Name="ItemTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootMethod Name="GetHorizontalScrollMode" />
@@ -265,10 +279,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutItem">
       <RootProperty Name="Text" />
       <RootProperty Name="IsTapEnabled" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
-    <RootType FullName="Windows.UI.Xaml.DataTemplate">
-      <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Demo_MvvmLight.Views.ShowDataPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">

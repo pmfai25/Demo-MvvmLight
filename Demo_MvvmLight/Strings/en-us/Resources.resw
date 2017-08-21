@@ -132,4 +132,7 @@
   <data name="AddStuff_Title.Text" xml:space="preserve">
     <value>AddStuff</value>
   </data>
+  <data name="ShowAccount_Title.Text" xml:space="preserve">
+    <value>ShowAccount</value>
+  </data>
 </root>

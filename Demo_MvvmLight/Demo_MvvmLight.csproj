@@ -133,6 +133,7 @@
     <Compile Include="ViewModels\AddStuffViewModel.cs" />
     <Compile Include="ViewModels\DetailsViewModel.cs" />
     <Compile Include="ViewModels\CreateAccountViewModel.cs" />
+    <Compile Include="ViewModels\ShowAccountViewModel.cs" />
     <Compile Include="ViewModels\ShowDataViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
@@ -144,6 +145,9 @@
     </Compile>
     <Compile Include="Views\CreateAccountPage.xaml.cs">
       <DependentUpon>CreateAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowAccountPage.xaml.cs">
+      <DependentUpon>ShowAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShowDataPage.xaml.cs">
       <DependentUpon>ShowDataPage.xaml</DependentUpon>
@@ -188,6 +192,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\CreateAccountPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ShowAccountPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

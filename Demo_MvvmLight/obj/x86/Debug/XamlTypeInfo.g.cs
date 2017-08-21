@@ -132,71 +132,75 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[31];
+            _typeNameTable = new string[33];
             _typeNameTable[0] = "Demo_MvvmLight.ViewModels.ViewModelLocator";
             _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "Demo_MvvmLight.ViewModels.AddStuffViewModel";
+            _typeNameTable[2] = "Demo_MvvmLight.ViewModels.ShowAccountViewModel";
             _typeNameTable[3] = "GalaSoft.MvvmLight.ViewModelBase";
             _typeNameTable[4] = "GalaSoft.MvvmLight.ObservableObject";
-            _typeNameTable[5] = "Demo_MvvmLight.ViewModels.DetailsViewModel";
-            _typeNameTable[6] = "Demo_MvvmLight.ViewModels.CreateAccountViewModel";
-            _typeNameTable[7] = "Demo_MvvmLight.ViewModels.ShowDataViewModel";
-            _typeNameTable[8] = "Demo_MvvmLight.ViewModels.MainViewModel";
-            _typeNameTable[9] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[10] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[11] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[12] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[13] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[14] = "Microsoft.Xaml.Interactivity.Trigger";
-            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.Behavior";
-            _typeNameTable[16] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[17] = "String";
-            _typeNameTable[18] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
-            _typeNameTable[19] = "System.Windows.Input.ICommand";
-            _typeNameTable[20] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[21] = "Demo_MvvmLight.Views.AddStuffPage";
-            _typeNameTable[22] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[23] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[24] = "Demo_MvvmLight.Views.DetailsPage";
-            _typeNameTable[25] = "Demo_MvvmLight.Views.CreateAccountPage";
-            _typeNameTable[26] = "Demo_MvvmLight.Converters.DefinePonter";
-            _typeNameTable[27] = "Demo_MvvmLight.Converters.RightTapEvent";
-            _typeNameTable[28] = "Demo_MvvmLight.Converters.HoldingTappedEvent";
-            _typeNameTable[29] = "Demo_MvvmLight.Views.ShowDataPage";
-            _typeNameTable[30] = "Demo_MvvmLight.Views.MainPage";
+            _typeNameTable[5] = "Demo_MvvmLight.ViewModels.AddStuffViewModel";
+            _typeNameTable[6] = "Demo_MvvmLight.ViewModels.DetailsViewModel";
+            _typeNameTable[7] = "Demo_MvvmLight.ViewModels.CreateAccountViewModel";
+            _typeNameTable[8] = "Demo_MvvmLight.ViewModels.ShowDataViewModel";
+            _typeNameTable[9] = "Demo_MvvmLight.ViewModels.MainViewModel";
+            _typeNameTable[10] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[11] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[12] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[13] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[14] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.Trigger";
+            _typeNameTable[16] = "Microsoft.Xaml.Interactivity.Behavior";
+            _typeNameTable[17] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[18] = "String";
+            _typeNameTable[19] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[20] = "System.Windows.Input.ICommand";
+            _typeNameTable[21] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[22] = "Demo_MvvmLight.Views.AddStuffPage";
+            _typeNameTable[23] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[24] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[25] = "Demo_MvvmLight.Views.DetailsPage";
+            _typeNameTable[26] = "Demo_MvvmLight.Views.CreateAccountPage";
+            _typeNameTable[27] = "Demo_MvvmLight.Views.ShowAccountPage";
+            _typeNameTable[28] = "Demo_MvvmLight.Converters.DefinePonter";
+            _typeNameTable[29] = "Demo_MvvmLight.Converters.RightTapEvent";
+            _typeNameTable[30] = "Demo_MvvmLight.Converters.HoldingTappedEvent";
+            _typeNameTable[31] = "Demo_MvvmLight.Views.ShowDataPage";
+            _typeNameTable[32] = "Demo_MvvmLight.Views.MainPage";
 
-            _typeTable = new global::System.Type[31];
+            _typeTable = new global::System.Type[33];
             _typeTable[0] = typeof(global::Demo_MvvmLight.ViewModels.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::Demo_MvvmLight.ViewModels.AddStuffViewModel);
+            _typeTable[2] = typeof(global::Demo_MvvmLight.ViewModels.ShowAccountViewModel);
             _typeTable[3] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
             _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
-            _typeTable[5] = typeof(global::Demo_MvvmLight.ViewModels.DetailsViewModel);
-            _typeTable[6] = typeof(global::Demo_MvvmLight.ViewModels.CreateAccountViewModel);
-            _typeTable[7] = typeof(global::Demo_MvvmLight.ViewModels.ShowDataViewModel);
-            _typeTable[8] = typeof(global::Demo_MvvmLight.ViewModels.MainViewModel);
-            _typeTable[9] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[10] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[11] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[12] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[13] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactivity.Trigger);
-            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
-            _typeTable[16] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[17] = typeof(global::System.String);
-            _typeTable[18] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
-            _typeTable[19] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[20] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[21] = typeof(global::Demo_MvvmLight.Views.AddStuffPage);
-            _typeTable[22] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[23] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[24] = typeof(global::Demo_MvvmLight.Views.DetailsPage);
-            _typeTable[25] = typeof(global::Demo_MvvmLight.Views.CreateAccountPage);
-            _typeTable[26] = typeof(global::Demo_MvvmLight.Converters.DefinePonter);
-            _typeTable[27] = typeof(global::Demo_MvvmLight.Converters.RightTapEvent);
-            _typeTable[28] = typeof(global::Demo_MvvmLight.Converters.HoldingTappedEvent);
-            _typeTable[29] = typeof(global::Demo_MvvmLight.Views.ShowDataPage);
-            _typeTable[30] = typeof(global::Demo_MvvmLight.Views.MainPage);
+            _typeTable[5] = typeof(global::Demo_MvvmLight.ViewModels.AddStuffViewModel);
+            _typeTable[6] = typeof(global::Demo_MvvmLight.ViewModels.DetailsViewModel);
+            _typeTable[7] = typeof(global::Demo_MvvmLight.ViewModels.CreateAccountViewModel);
+            _typeTable[8] = typeof(global::Demo_MvvmLight.ViewModels.ShowDataViewModel);
+            _typeTable[9] = typeof(global::Demo_MvvmLight.ViewModels.MainViewModel);
+            _typeTable[10] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[11] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.Trigger);
+            _typeTable[16] = typeof(global::Microsoft.Xaml.Interactivity.Behavior);
+            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[18] = typeof(global::System.String);
+            _typeTable[19] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[20] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[21] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[22] = typeof(global::Demo_MvvmLight.Views.AddStuffPage);
+            _typeTable[23] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[24] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[25] = typeof(global::Demo_MvvmLight.Views.DetailsPage);
+            _typeTable[26] = typeof(global::Demo_MvvmLight.Views.CreateAccountPage);
+            _typeTable[27] = typeof(global::Demo_MvvmLight.Views.ShowAccountPage);
+            _typeTable[28] = typeof(global::Demo_MvvmLight.Converters.DefinePonter);
+            _typeTable[29] = typeof(global::Demo_MvvmLight.Converters.RightTapEvent);
+            _typeTable[30] = typeof(global::Demo_MvvmLight.Converters.HoldingTappedEvent);
+            _typeTable[31] = typeof(global::Demo_MvvmLight.Views.ShowDataPage);
+            _typeTable[32] = typeof(global::Demo_MvvmLight.Views.MainPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -233,25 +237,26 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
 
         private object Activate_0_ViewModelLocator() { return new global::Demo_MvvmLight.ViewModels.ViewModelLocator(); }
         private object Activate_4_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
-        private object Activate_10_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_13_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_16_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_18_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_21_AddStuffPage() { return new global::Demo_MvvmLight.Views.AddStuffPage(); }
-        private object Activate_24_DetailsPage() { return new global::Demo_MvvmLight.Views.DetailsPage(); }
-        private object Activate_25_CreateAccountPage() { return new global::Demo_MvvmLight.Views.CreateAccountPage(); }
-        private object Activate_26_DefinePonter() { return new global::Demo_MvvmLight.Converters.DefinePonter(); }
-        private object Activate_27_RightTapEvent() { return new global::Demo_MvvmLight.Converters.RightTapEvent(); }
-        private object Activate_28_HoldingTappedEvent() { return new global::Demo_MvvmLight.Converters.HoldingTappedEvent(); }
-        private object Activate_29_ShowDataPage() { return new global::Demo_MvvmLight.Views.ShowDataPage(); }
-        private object Activate_30_MainPage() { return new global::Demo_MvvmLight.Views.MainPage(); }
-        private void VectorAdd_10_BehaviorCollection(object instance, object item)
+        private object Activate_11_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_14_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_17_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_19_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_22_AddStuffPage() { return new global::Demo_MvvmLight.Views.AddStuffPage(); }
+        private object Activate_25_DetailsPage() { return new global::Demo_MvvmLight.Views.DetailsPage(); }
+        private object Activate_26_CreateAccountPage() { return new global::Demo_MvvmLight.Views.CreateAccountPage(); }
+        private object Activate_27_ShowAccountPage() { return new global::Demo_MvvmLight.Views.ShowAccountPage(); }
+        private object Activate_28_DefinePonter() { return new global::Demo_MvvmLight.Converters.DefinePonter(); }
+        private object Activate_29_RightTapEvent() { return new global::Demo_MvvmLight.Converters.RightTapEvent(); }
+        private object Activate_30_HoldingTappedEvent() { return new global::Demo_MvvmLight.Converters.HoldingTappedEvent(); }
+        private object Activate_31_ShowDataPage() { return new global::Demo_MvvmLight.Views.ShowDataPage(); }
+        private object Activate_32_MainPage() { return new global::Demo_MvvmLight.Views.MainPage(); }
+        private void VectorAdd_11_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_16_ActionCollection(object instance, object item)
+        private void VectorAdd_17_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
@@ -271,6 +276,7 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
             case 0:   //  Demo_MvvmLight.ViewModels.ViewModelLocator
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_0_ViewModelLocator;
+                userType.AddMemberName("ShowAccountViewModel");
                 userType.AddMemberName("AddStuffViewModel");
                 userType.AddMemberName("DetailsViewModel");
                 userType.AddMemberName("CreateAccountViewModel");
@@ -284,7 +290,7 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
                 xamlType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Demo_MvvmLight.ViewModels.AddStuffViewModel
+            case 2:   //  Demo_MvvmLight.ViewModels.ShowAccountViewModel
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -302,91 +308,98 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  Demo_MvvmLight.ViewModels.DetailsViewModel
+            case 5:   //  Demo_MvvmLight.ViewModels.AddStuffViewModel
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Demo_MvvmLight.ViewModels.CreateAccountViewModel
+            case 6:   //  Demo_MvvmLight.ViewModels.DetailsViewModel
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  Demo_MvvmLight.ViewModels.ShowDataViewModel
+            case 7:   //  Demo_MvvmLight.ViewModels.CreateAccountViewModel
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Demo_MvvmLight.ViewModels.MainViewModel
+            case 8:   //  Demo_MvvmLight.ViewModels.ShowDataViewModel
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 9:   //  Demo_MvvmLight.ViewModels.MainViewModel
+                userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 11:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_10_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_11_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 11:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 12:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  Windows.UI.Xaml.DependencyObject
+            case 13:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+            case 14:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Trigger"));
-                userType.Activator = Activate_13_EventTriggerBehavior;
+                userType.Activator = Activate_14_EventTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
                 userType.AddMemberName("EventName");
                 userType.AddMemberName("SourceObject");
                 xamlType = userType;
                 break;
 
-            case 14:   //  Microsoft.Xaml.Interactivity.Trigger
+            case 15:   //  Microsoft.Xaml.Interactivity.Trigger
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior"));
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactivity.Trigger.Actions");
                 userType.AddMemberName("Actions");
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.Xaml.Interactivity.Behavior
+            case 16:   //  Microsoft.Xaml.Interactivity.Behavior
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.AddMemberName("AssociatedObject");
                 xamlType = userType;
                 break;
 
-            case 16:   //  Microsoft.Xaml.Interactivity.ActionCollection
+            case 17:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_16_ActionCollection;
+                userType.CollectionAdd = VectorAdd_17_ActionCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 17:   //  String
+            case 18:   //  String
                 xamlType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+            case 19:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_18_InvokeCommandAction;
+                userType.Activator = Activate_19_InvokeCommandAction;
                 userType.AddMemberName("Command");
                 userType.AddMemberName("CommandParameter");
                 userType.AddMemberName("InputConverter");
@@ -395,76 +408,83 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 19:   //  System.Windows.Input.ICommand
+            case 20:   //  System.Windows.Input.ICommand
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 20:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 21:   //  Windows.UI.Xaml.Data.IValueConverter
                 xamlType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 21:   //  Demo_MvvmLight.Views.AddStuffPage
+            case 22:   //  Demo_MvvmLight.Views.AddStuffPage
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_21_AddStuffPage;
+                userType.Activator = Activate_22_AddStuffPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 22:   //  Windows.UI.Xaml.Controls.Page
+            case 23:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 23:   //  Windows.UI.Xaml.Controls.UserControl
+            case 24:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 24:   //  Demo_MvvmLight.Views.DetailsPage
+            case 25:   //  Demo_MvvmLight.Views.DetailsPage
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_24_DetailsPage;
+                userType.Activator = Activate_25_DetailsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 25:   //  Demo_MvvmLight.Views.CreateAccountPage
+            case 26:   //  Demo_MvvmLight.Views.CreateAccountPage
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_25_CreateAccountPage;
+                userType.Activator = Activate_26_CreateAccountPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 26:   //  Demo_MvvmLight.Converters.DefinePonter
+            case 27:   //  Demo_MvvmLight.Views.ShowAccountPage
+                userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_27_ShowAccountPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 28:   //  Demo_MvvmLight.Converters.DefinePonter
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_26_DefinePonter;
+                userType.Activator = Activate_28_DefinePonter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 27:   //  Demo_MvvmLight.Converters.RightTapEvent
+            case 29:   //  Demo_MvvmLight.Converters.RightTapEvent
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_27_RightTapEvent;
+                userType.Activator = Activate_29_RightTapEvent;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 28:   //  Demo_MvvmLight.Converters.HoldingTappedEvent
+            case 30:   //  Demo_MvvmLight.Converters.HoldingTappedEvent
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_28_HoldingTappedEvent;
+                userType.Activator = Activate_30_HoldingTappedEvent;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 29:   //  Demo_MvvmLight.Views.ShowDataPage
+            case 31:   //  Demo_MvvmLight.Views.ShowDataPage
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_29_ShowDataPage;
+                userType.Activator = Activate_31_ShowDataPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 30:   //  Demo_MvvmLight.Views.MainPage
+            case 32:   //  Demo_MvvmLight.Views.MainPage
                 userType = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_30_MainPage;
+                userType.Activator = Activate_32_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -473,115 +493,120 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
         }
 
 
-        private object get_0_ViewModelLocator_AddStuffViewModel(object instance)
+        private object get_0_ViewModelLocator_ShowAccountViewModel(object instance)
+        {
+            var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
+            return that.ShowAccountViewModel;
+        }
+        private object get_1_ViewModelLocator_AddStuffViewModel(object instance)
         {
             var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
             return that.AddStuffViewModel;
         }
-        private object get_1_ViewModelLocator_DetailsViewModel(object instance)
+        private object get_2_ViewModelLocator_DetailsViewModel(object instance)
         {
             var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
             return that.DetailsViewModel;
         }
-        private object get_2_ViewModelLocator_CreateAccountViewModel(object instance)
+        private object get_3_ViewModelLocator_CreateAccountViewModel(object instance)
         {
             var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
             return that.CreateAccountViewModel;
         }
-        private object get_3_ViewModelLocator_ShowDataViewModel(object instance)
+        private object get_4_ViewModelLocator_ShowDataViewModel(object instance)
         {
             var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
             return that.ShowDataViewModel;
         }
-        private object get_4_ViewModelLocator_MainViewModel(object instance)
+        private object get_5_ViewModelLocator_MainViewModel(object instance)
         {
             var that = (global::Demo_MvvmLight.ViewModels.ViewModelLocator)instance;
             return that.MainViewModel;
         }
-        private object get_5_Interaction_Behaviors(object instance)
+        private object get_6_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_5_Interaction_Behaviors(object instance, object Value)
+        private void set_6_Interaction_Behaviors(object instance, object Value)
         {
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
-        private object get_6_Trigger_Actions(object instance)
+        private object get_7_Trigger_Actions(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactivity.Trigger)instance;
             return that.Actions;
         }
-        private object get_7_EventTriggerBehavior_EventName(object instance)
+        private object get_8_EventTriggerBehavior_EventName(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.EventName;
         }
-        private void set_7_EventTriggerBehavior_EventName(object instance, object Value)
+        private void set_8_EventTriggerBehavior_EventName(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.EventName = (global::System.String)Value;
         }
-        private object get_8_EventTriggerBehavior_SourceObject(object instance)
+        private object get_9_EventTriggerBehavior_SourceObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.SourceObject;
         }
-        private void set_8_EventTriggerBehavior_SourceObject(object instance, object Value)
+        private void set_9_EventTriggerBehavior_SourceObject(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.SourceObject = (global::System.Object)Value;
         }
-        private object get_9_Behavior_AssociatedObject(object instance)
+        private object get_10_Behavior_AssociatedObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactivity.Behavior)instance;
             return that.AssociatedObject;
         }
-        private object get_10_InvokeCommandAction_Command(object instance)
+        private object get_11_InvokeCommandAction_Command(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_10_InvokeCommandAction_Command(object instance, object Value)
+        private void set_11_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_11_InvokeCommandAction_CommandParameter(object instance)
+        private object get_12_InvokeCommandAction_CommandParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.CommandParameter;
         }
-        private void set_11_InvokeCommandAction_CommandParameter(object instance, object Value)
+        private void set_12_InvokeCommandAction_CommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.CommandParameter = (global::System.Object)Value;
         }
-        private object get_12_InvokeCommandAction_InputConverter(object instance)
+        private object get_13_InvokeCommandAction_InputConverter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverter;
         }
-        private void set_12_InvokeCommandAction_InputConverter(object instance, object Value)
+        private void set_13_InvokeCommandAction_InputConverter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
         }
-        private object get_13_InvokeCommandAction_InputConverterParameter(object instance)
+        private object get_14_InvokeCommandAction_InputConverterParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterParameter;
         }
-        private void set_13_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        private void set_14_InvokeCommandAction_InputConverterParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterParameter = (global::System.Object)Value;
         }
-        private object get_14_InvokeCommandAction_InputConverterLanguage(object instance)
+        private object get_15_InvokeCommandAction_InputConverterLanguage(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterLanguage;
         }
-        private void set_14_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        private void set_15_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterLanguage = (global::System.String)Value;
@@ -594,34 +619,40 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "Demo_MvvmLight.ViewModels.ViewModelLocator.ShowAccountViewModel":
+                userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Demo_MvvmLight.ViewModels.ViewModelLocator");
+                xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "ShowAccountViewModel", "Demo_MvvmLight.ViewModels.ShowAccountViewModel");
+                xamlMember.Getter = get_0_ViewModelLocator_ShowAccountViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Demo_MvvmLight.ViewModels.ViewModelLocator.AddStuffViewModel":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Demo_MvvmLight.ViewModels.ViewModelLocator");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "AddStuffViewModel", "Demo_MvvmLight.ViewModels.AddStuffViewModel");
-                xamlMember.Getter = get_0_ViewModelLocator_AddStuffViewModel;
+                xamlMember.Getter = get_1_ViewModelLocator_AddStuffViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Demo_MvvmLight.ViewModels.ViewModelLocator.DetailsViewModel":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Demo_MvvmLight.ViewModels.ViewModelLocator");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "DetailsViewModel", "Demo_MvvmLight.ViewModels.DetailsViewModel");
-                xamlMember.Getter = get_1_ViewModelLocator_DetailsViewModel;
+                xamlMember.Getter = get_2_ViewModelLocator_DetailsViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Demo_MvvmLight.ViewModels.ViewModelLocator.CreateAccountViewModel":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Demo_MvvmLight.ViewModels.ViewModelLocator");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "CreateAccountViewModel", "Demo_MvvmLight.ViewModels.CreateAccountViewModel");
-                xamlMember.Getter = get_2_ViewModelLocator_CreateAccountViewModel;
+                xamlMember.Getter = get_3_ViewModelLocator_CreateAccountViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Demo_MvvmLight.ViewModels.ViewModelLocator.ShowDataViewModel":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Demo_MvvmLight.ViewModels.ViewModelLocator");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "ShowDataViewModel", "Demo_MvvmLight.ViewModels.ShowDataViewModel");
-                xamlMember.Getter = get_3_ViewModelLocator_ShowDataViewModel;
+                xamlMember.Getter = get_4_ViewModelLocator_ShowDataViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Demo_MvvmLight.ViewModels.ViewModelLocator.MainViewModel":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Demo_MvvmLight.ViewModels.ViewModelLocator");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "MainViewModel", "Demo_MvvmLight.ViewModels.MainViewModel");
-                xamlMember.Getter = get_4_ViewModelLocator_MainViewModel;
+                xamlMember.Getter = get_5_ViewModelLocator_MainViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
@@ -629,70 +660,70 @@ namespace Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_5_Interaction_Behaviors;
-                xamlMember.Setter = set_5_Interaction_Behaviors;
+                xamlMember.Getter = get_6_Interaction_Behaviors;
+                xamlMember.Setter = set_6_Interaction_Behaviors;
                 break;
             case "Microsoft.Xaml.Interactivity.Trigger.Actions":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Trigger");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_Trigger_Actions;
+                xamlMember.Getter = get_7_Trigger_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_7_EventTriggerBehavior_EventName;
+                xamlMember.Getter = get_8_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_8_EventTriggerBehavior_EventName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_8_EventTriggerBehavior_SourceObject;
+                xamlMember.Getter = get_9_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_9_EventTriggerBehavior_SourceObject;
                 break;
             case "Microsoft.Xaml.Interactivity.Behavior.AssociatedObject":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Behavior");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_9_Behavior_AssociatedObject;
+                xamlMember.Getter = get_10_Behavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_InvokeCommandAction_Command;
-                xamlMember.Setter = set_10_InvokeCommandAction_Command;
+                xamlMember.Getter = get_11_InvokeCommandAction_Command;
+                xamlMember.Setter = set_11_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_11_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_12_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_12_InvokeCommandAction_CommandParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_12_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_13_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_13_InvokeCommandAction_InputConverter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_13_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_14_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_14_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Demo_MvvmLight.Demo_MvvmLight_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_14_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_14_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Getter = get_15_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_15_InvokeCommandAction_InputConverterLanguage;
                 break;
             }
             return xamlMember;
