@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-1OFGJ1D</Machine>
+    <WindowsUser>Tran</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Release|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>25706B38-CA49-4776-B4E4-0B3BDB50BD00</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Tran</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\AppX</LayoutDir>
+    <RegisteredManifestChecksum>492CA5CA698303CDB5046696411FBFD40E49460D83FCC0F3596F0E5FE244AEBE</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>25706B38-CA49-4776-B4E4-0B3BDB50BD00_1.0.0.0_x86__xqdpsre0p1byt</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>25706B38-CA49-4776-B4E4-0B3BDB50BD00_xqdpsre0p1byt!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>25706B38-CA49-4776-B4E4-0B3BDB50BD00</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Tran</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-08-21T08:41:43.114</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+      <Modified>2017-07-23T01:04:07.772</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-23T01:04:08.175</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-23T01:04:08.413</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-23T01:04:08.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-23T01:04:08.738</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-23T01:04:08.751</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-07-23T01:04:08.821</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\clrcompression.dll">
+      <PackagePath>clrcompression.dll</PackagePath>
+      <Modified>2016-06-13T20:51:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Database\Data.db">
+      <PackagePath>Database\Data.db</PackagePath>
+      <Modified>2017-07-23T01:29:21.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Demo_MvvmLight.dll">
+      <PackagePath>Demo_MvvmLight.dll</PackagePath>
+      <Modified>2017-08-21T08:41:42.843</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Demo_MvvmLight.exe">
+      <PackagePath>Demo_MvvmLight.exe</PackagePath>
+      <Modified>2017-08-21T08:41:43.099</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\Demo_MvvmLight.pdb">
+      <PackagePath>Demo_MvvmLight.pdb</PackagePath>
+      <Modified>2017-08-21T08:41:43.095</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2017-08-21T08:41:07.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2017-08-02T11:09:34.756</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\_Resources\0.rsrc">
+      <PackagePath>_Resources\0.rsrc</PackagePath>
+      <Modified>2017-08-21T08:41:27.216</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\_Resources\1.rsrc">
+      <PackagePath>_Resources\1.rsrc</PackagePath>
+      <Modified>2017-08-21T08:41:27.221</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\bin\x86\Release\ilc\_Resources\index.txt">
+      <PackagePath>_Resources\index.txt</PackagePath>
+      <Modified>2017-08-21T08:41:27.222</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Users\Tran\.nuget\packages\microsoft.net.native.sharedlibrary-x86\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx">
+      <Name>Microsoft.NET.Native.Framework.1.7</Name>
+      <Version>1.7.25531.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\Tran\.nuget\packages\microsoft.net.native.sharedlibrary-x86\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\Tran\.nuget\packages\microsoft.net.native.sharedlibrary-x64\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx">
+      <Name>Microsoft.NET.Native.Framework.1.7</Name>
+      <Version>1.7.25531.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\Tran\.nuget\packages\microsoft.net.native.sharedlibrary-x64\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\Tran\.nuget\packages\microsoft.net.native.sharedlibrary-arm\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx">
+      <Name>Microsoft.NET.Native.Framework.1.7</Name>
+      <Version>1.7.25531.0</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Framework.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\Tran\.nuget\packages\microsoft.net.native.sharedlibrary-arm\1.7.0\build\..\tools\SharedLibrary\ret\Native\Microsoft.NET.Native.Framework.1.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.1.7.appx">
+      <Name>Microsoft.NET.Native.Runtime.1.7</Name>
+      <Version>1.7.25531.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\build\..\tools\Runtime\x86\Microsoft.NET.Native.Runtime.1.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.1.7.appx">
+      <Name>Microsoft.NET.Native.Runtime.1.7</Name>
+      <Version>1.7.25531.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\build\..\tools\Runtime\x64\Microsoft.NET.Native.Runtime.1.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.1.7.appx">
+      <Name>Microsoft.NET.Native.Runtime.1.7</Name>
+      <Version>1.7.25531.0</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.NET.Native.Runtime.1.7, MinVersion = 1.7.25531.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\build\..\tools\Runtime\arm\Microsoft.NET.Native.Runtime.1.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.24123.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.24123.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\ARM\Microsoft.VCLibs.ARM.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.24123.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.24123.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x64\Microsoft.VCLibs.x64.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00</Name>
+      <Version>14.0.24123.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00, MinVersion = 14.0.24123.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Retail\x86\Microsoft.VCLibs.x86.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

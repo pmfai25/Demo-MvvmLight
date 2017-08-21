@@ -1,0 +1,11 @@
+/out:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\intermediate\\"
+/ref:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\intermediate\TransformedSRWR"
+/ref:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\in"
+/ref:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\in\\"
+/ref:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\in\\"
+/ref:"C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\tools\x86\ilc\lib\Private\\"
+/ref:"C:\Users\Tran\Documents\Visual Studio 2015\Projects\Demo_MvvmLight\Demo_MvvmLight\obj\x86\Release\ilc\in\WinMetadata"
+/ca:System.Private.CoreLib
+/cscpath:"C:\Users\Tran\.nuget\packages\microsoft.net.native.compiler\1.7.0\tools\x86\ilc\csc"

@@ -41,13 +41,14 @@ namespace Demo_MvvmLight.ViewModels
         private ObservableCollection<Stuff> _dataStuff;
         private List<Stuff> _stuffBeSelect;
         private bool _isCheckAdmin;
+        private bool _isEnabled;
         private ListViewSelectionMode _checkSelectionMode;
         private bool _isCheckMultiChechkBoxSelectMode;
         private string _userName;
         private string _addressData;
         private string _IdStuffPass;
         private Point _mousePoint;
-
+        private Visibility _isVisibility;
 
         #endregion
 
@@ -130,6 +131,10 @@ namespace Demo_MvvmLight.ViewModels
                 {
                     CheckSelectionMode = ListViewSelectionMode.Single;
                     IsCheckMultiChechkBoxSelectMode = false;
+                    IsEnabled = true;
+                    IsVisibility = Visibility.Visible;
+                    RaisePropertyChanged("IsVisibility");
+                    RaisePropertyChanged("IsEnabled");
                     RaisePropertyChanged("IsCheckMultiChechkBoxSelectMode");
                     RaisePropertyChanged("CheckSelectionMode");
                     DataStuff = new ObservableCollection<Stuff>(DataProviders.GetAllStuff(AddressData));
@@ -172,17 +177,34 @@ namespace Demo_MvvmLight.ViewModels
             {
                 _tapped_SelectMode = new RelayCommand(() =>
                 {
-
+                    IsEnabled = !IsEnabled;
                     IsCheckMultiChechkBoxSelectMode = !IsCheckMultiChechkBoxSelectMode;
                     CheckSelectionMode = IsCheckMultiChechkBoxSelectMode ? ListViewSelectionMode.Multiple : ListViewSelectionMode.Single;
+                    IsVisibility = IsCheckMultiChechkBoxSelectMode ? Visibility.Collapsed : Visibility.Visible;
+                    RaisePropertyChanged("IsVisibility");
                     RaisePropertyChanged("IsCheckMultiChechkBoxSelectMode");
                     RaisePropertyChanged("CheckSelectionMode");
-
-
+                    RaisePropertyChanged("IsEnabled");
                 });
                 return _tapped_SelectMode;
             }
         }
+
+        public ICommand MultiDelete
+        {
+            get
+            {
+                _MultiDelete = new RelayCommand<ListView>((p) =>
+                {
+                    p.SelectedItems.ToList().ForEach((t) =>
+                    {
+                        DataProviders.DeleteWithAsync(AddressData, Enum.EChoice.Stuff, (t as Stuff).ID, Enum.EinStuff.ID);
+                    });
+                });
+                return _MultiDelete;
+            }
+        }
+
         #endregion
 
         #region Other Properties
@@ -232,20 +254,8 @@ namespace Demo_MvvmLight.ViewModels
 
         public List<Stuff> StuffBeSelect { get => _stuffBeSelect; set => _stuffBeSelect = value; }
         public ListViewSelectionMode CheckSelectionMode { get => _checkSelectionMode; set => _checkSelectionMode = value; }
-        public ICommand MultiDelete
-        {
-            get
-            {
-                _MultiDelete = new RelayCommand<ListView>((p) =>
-                {
-                    p.SelectedItems.ToList().ForEach((t) =>
-                    {
-
-                    });
-                });
-                return _MultiDelete;
-            }
-        }
+        public bool IsEnabled { get => _isEnabled; set => _isEnabled = value; }
+        public Visibility IsVisibility { get => _isVisibility; set => _isVisibility = value; }
 
         #endregion
         #endregion

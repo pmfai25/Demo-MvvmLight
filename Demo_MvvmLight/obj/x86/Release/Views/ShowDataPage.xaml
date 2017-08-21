@@ -1,0 +1,188 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="Demo_MvvmLight.Views.ShowDataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Login="using:Demo_MvvmLight"
+    xmlns:Conver="using:Demo_MvvmLight.Converters"
+    DataContext="{Binding ShowDataViewModel, Source={StaticResource Locator}}"
+    mc:Ignorable="d"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core" >
+
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding Loaded_ShowData}"
+                                              />
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+
+    <Page.Resources>
+        <Conver:DefinePonter x:Key="PointMouse"/>
+        <Conver:RightTapEvent x:Key="Righttap"/>
+        <Conver:HoldingTappedEvent x:Key="HoldingEvent"/>
+        <Flyout x:Key="rightflyout" Placement="Right">
+            <TextBlock Text="Hello"/>
+        </Flyout>
+    </Page.Resources>
+    <Grid x:ConnectionId='2'
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:ConnectionId='3' x:Name="TitleRow" Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:ConnectionId='4'
+            x:Name="TitlePage"
+            x:Uid="Login_Title"
+            Style="{StaticResource PageTitleStyle}" />
+
+        <Grid x:ConnectionId='5' x:Name="LayoutRoot"
+            Grid.Row="1" 
+            
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.-->
+
+            <StackPanel x:ConnectionId='6'
+                Orientation="Vertical" x:Name="s">
+
+                <Button x:ConnectionId='7' x:Name="Btn"
+                        Content="Hello"
+                        IsHoldingEnabled="True"
+                        IsRightTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                        Command="{Binding Click_Item}"
+                                                            >
+
+                </Button>
+
+                <ListView x:ConnectionId='8' 
+                    x:Name="LiV_Show"
+                    ItemsSource="{Binding DataStuff}"
+                    ScrollViewer.HorizontalScrollMode="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible"
+                    ScrollViewer.VerticalScrollMode="Enabled"                    
+                    IsHitTestVisible="True"
+                    IsHoldingEnabled="True"
+                    IsRightTapEnabled="True"
+                    IsMultiSelectCheckBoxEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                    SelectionMode="{Binding CheckSelectionMode}" >
+
+                    <ListView.Resources>
+                        <MenuFlyout x:ConnectionId='9' x:Name="A" >
+                            <MenuFlyout.Items>
+
+                                <MenuFlyoutItem Text="About"/>
+                                <MenuFlyoutItem x:ConnectionId='10' x:Name="CC" Text="Delete" IsTapEnabled="True" >
+                                    <i:Interaction.Behaviors>
+                                        <core:EventTriggerBehavior EventName="Click" SourceObject="{Binding ElementName=CC}">
+                                            <core:InvokeCommandAction   Command="{Binding MenuClickDelete}"/>
+                                        </core:EventTriggerBehavior>
+                                    </i:Interaction.Behaviors>
+                                </MenuFlyoutItem>
+                            </MenuFlyout.Items>
+
+
+                        </MenuFlyout>
+
+                    </ListView.Resources>
+
+                    <i:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="Holding">
+                            <core:InvokeCommandAction x:ConnectionId='11' Command="{Binding HoldingTapped_Menu}"
+                                                      InputConverter="{StaticResource HoldingEvent}"
+                                                                                                 
+                                                      />
+                        </core:EventTriggerBehavior>
+                        <core:EventTriggerBehavior EventName="Tapped">
+
+                            <core:InvokeCommandAction   Command="{Binding Click_Item}"
+                                                      CommandParameter="{Binding Path=SelectedItem, ElementName=LiV_Show}"/>
+                        </core:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <StackPanel Orientation="Horizontal"
+                                        IsRightTapEnabled="True">
+
+                                <TextBlock Text="{Binding  ID}"
+                                           IsRightTapEnabled="True"/>
+
+                                <TextBlock  Margin="50,0,0,0"                                    
+                                            Text="{Binding Name}"/>
+
+                                <TextBlock Margin="50,0,0,0"
+                                           Text="{Binding Old}"/>
+
+                                <TextBlock Margin="50,0,0,0"
+                                           Text="{Binding Salary}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <AppBar IsOpen="True"
+                IsSticky="True"
+                IsEnabled="True" >
+            <StackPanel Orientation="Horizontal">
+                <RelativePanel>
+                    <AppBarButton x:ConnectionId='16' IsEnabled="{Binding IsEnabled}"
+                        x:Name="AppbBtn_Add"
+                        Content="Add"
+                        Icon="Add"
+                        Command="{Binding Click_Add}"/>
+                    <TextBlock Text="Add"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton IsEnabled="False"/>
+                <RelativePanel>
+                    <AppBarButton x:ConnectionId='15' IsEnabled="{Binding IsEnabled}"
+                        x:Name="AppbBtn_Show"
+                        Command="{Binding Click_ResetDataStuff}"
+                        Icon="Sync"/>
+                    <TextBlock Text="Reset Data"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton x:ConnectionId='12' x:Name="BridgeCheckBox" Background="Red" IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}" IsTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"/>
+                <RelativePanel >
+                    <AppBarButton x:ConnectionId='14'
+                        x:Name="AppbBtn_SelectMode"
+                        Icon="List"
+                        Command="{Binding Tapped_SelectMode}" />
+                    <TextBlock Text="Select Menu"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+                </RelativePanel>
+                <AppBarButton IsEnabled="False"/>
+                <RelativePanel >
+                    <AppBarButton x:ConnectionId='13'
+                        IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
+                        x:Name="AppbBtn_Delete"
+                        Icon="Delete"
+                        Content="Delete"
+                        Command="{Binding MultiDelete}"
+                                                            />
+                    <TextBlock Text="Delete"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+
+                </RelativePanel>
+
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+</Page>
+

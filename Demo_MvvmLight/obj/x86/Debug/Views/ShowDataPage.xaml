@@ -136,8 +136,8 @@
                 IsSticky="True"
                 IsEnabled="True" >
             <StackPanel Orientation="Horizontal">
-                <RelativePanel>
-                    <AppBarButton x:ConnectionId='16'
+                <RelativePanel Visibility="{Binding IsVisibility}">
+                    <AppBarButton x:ConnectionId='16' IsEnabled="{Binding IsEnabled}"
                         x:Name="AppbBtn_Add"
                         Content="Add"
                         Icon="Add"
@@ -147,8 +147,8 @@
                                RelativePanel.AlignBottomWithPanel="True"/>
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
-                <RelativePanel>
-                    <AppBarButton x:ConnectionId='15'                    
+                <RelativePanel Visibility="{Binding IsVisibility}">
+                    <AppBarButton x:ConnectionId='15' IsEnabled="{Binding IsEnabled}"
                         x:Name="AppbBtn_Show"
                         Command="{Binding Click_ResetDataStuff}"
                         Icon="Sync"/>
@@ -167,7 +167,7 @@
                                RelativePanel.AlignBottomWithPanel="True"/>
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
-                <RelativePanel>
+                <RelativePanel >
                     <AppBarButton x:ConnectionId='13'
                         IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
                         x:Name="AppbBtn_Delete"

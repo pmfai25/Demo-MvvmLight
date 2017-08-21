@@ -46,6 +46,8 @@
     <RootPropertyPathName Name="ID" />
     <RootPropertyPathName Name="MultiDelete" />
     <RootPropertyPathName Name="Tapped_SelectMode" />
+    <RootPropertyPathName Name="IsVisibility" />
+    <RootPropertyPathName Name="IsEnabled" />
     <RootPropertyPathName Name="Click_ResetDataStuff" />
     <RootPropertyPathName Name="Click_Add" />
     <RootPropertyPathName Name="MainViewModel" />
