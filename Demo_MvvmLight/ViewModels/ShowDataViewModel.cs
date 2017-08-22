@@ -36,6 +36,7 @@ namespace Demo_MvvmLight.ViewModels
         private ICommand _holdingTapped_Menu;
         private ICommand _tapped_SelectMode;
         private ICommand _MultiDelete;
+        private ICommand _showAccount;
         private IData _dataProviders;
         private Stuff _holdingSelect;
         private ObservableCollection<Stuff> _dataStuff;
@@ -133,6 +134,7 @@ namespace Demo_MvvmLight.ViewModels
                     IsCheckMultiChechkBoxSelectMode = false;
                     IsEnabled = true;
                     IsVisibility = Visibility.Visible;
+
                     RaisePropertyChanged("IsVisibility");
                     RaisePropertyChanged("IsEnabled");
                     RaisePropertyChanged("IsCheckMultiChechkBoxSelectMode");
@@ -239,6 +241,7 @@ namespace Demo_MvvmLight.ViewModels
             get
             {
                 _isCheckAdmin = UserName.Equals("Admin");
+                RaisePropertyChanged("IsCheckAdmin");
                 return _isCheckAdmin;
             }
         }
@@ -248,6 +251,7 @@ namespace Demo_MvvmLight.ViewModels
             get
             {
                 _userName = ServiceLocator.Current.GetInstance<string>("UserName");
+                RaisePropertyChanged("UserName");
                 return _userName;
             }
         }
@@ -256,6 +260,17 @@ namespace Demo_MvvmLight.ViewModels
         public ListViewSelectionMode CheckSelectionMode { get => _checkSelectionMode; set => _checkSelectionMode = value; }
         public bool IsEnabled { get => _isEnabled; set => _isEnabled = value; }
         public Visibility IsVisibility { get => _isVisibility; set => _isVisibility = value; }
+        public ICommand ShowAccount
+        {
+            get
+            {
+                _showAccount = new RelayCommand(() =>
+                {
+                    NavigationService.Navigate(typeof(ShowAccountViewModel).FullName);
+                });
+                return _showAccount;
+            }
+        }
 
         #endregion
         #endregion

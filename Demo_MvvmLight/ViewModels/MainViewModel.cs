@@ -38,6 +38,8 @@ namespace Demo_MvvmLight.ViewModels
         private string textTxbUser;
         private string textTxbPass;
         private ICommand click_SignIn;
+        private ICommand _clickGetAccount;
+        private ICommand _loadedView;
         #endregion
 
         public MainViewModel(IData data)
@@ -143,6 +145,29 @@ namespace Demo_MvvmLight.ViewModels
                 }
                 SimpleIoc.Default.Register(() => value, "UserName");
                 _username = value;
+            }
+        }
+
+        public ICommand ClickGetAccount
+        {
+            get
+            {
+                _clickGetAccount = new RelayCommand(() =>
+                {
+                    NavigationService.Navigate(typeof(CreateAccountViewModel).FullName);
+                });
+                return _clickGetAccount;
+            }
+        }
+        public ICommand LoadedView
+        {
+            get
+            {
+                TextTxbPass = String.Empty;
+                TextTxbUser = String.Empty;
+                RaisePropertyChanged("TextTxbUser");
+                RaisePropertyChanged("TextTxbPass");
+                return _loadedView;
             }
         }
 

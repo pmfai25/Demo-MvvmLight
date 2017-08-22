@@ -52,7 +52,8 @@
                 Orientation="Vertical" x:Name="s">
 
                 <Button x:ConnectionId='7' x:Name="Btn"
-                        Content="Hello"
+                        IsEnabled="False"
+                        Content="{Binding UserName}"
                         IsHoldingEnabled="True"
                         IsRightTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
                         Command="{Binding Click_Item}"
@@ -137,7 +138,7 @@
                 IsEnabled="True" >
             <StackPanel Orientation="Horizontal">
                 <RelativePanel Visibility="{Binding IsVisibility}">
-                    <AppBarButton x:ConnectionId='16' IsEnabled="{Binding IsEnabled}"
+                    <AppBarButton x:ConnectionId='17' IsEnabled="{Binding IsEnabled}"
                         x:Name="AppbBtn_Add"
                         Content="Add"
                         Icon="Add"
@@ -148,7 +149,7 @@
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
                 <RelativePanel Visibility="{Binding IsVisibility}">
-                    <AppBarButton x:ConnectionId='15' IsEnabled="{Binding IsEnabled}"
+                    <AppBarButton x:ConnectionId='16' IsEnabled="{Binding IsEnabled}"
                         x:Name="AppbBtn_Show"
                         Command="{Binding Click_ResetDataStuff}"
                         Icon="Sync"/>
@@ -158,7 +159,7 @@
                 </RelativePanel>
                 <AppBarButton x:ConnectionId='12' x:Name="BridgeCheckBox" Background="Red" IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}" IsTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"/>
                 <RelativePanel >
-                    <AppBarButton x:ConnectionId='14'
+                    <AppBarButton x:ConnectionId='15'
                         x:Name="AppbBtn_SelectMode"
                         Icon="List"
                         Command="{Binding Tapped_SelectMode}" />
@@ -168,7 +169,7 @@
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
                 <RelativePanel >
-                    <AppBarButton x:ConnectionId='13'
+                    <AppBarButton x:ConnectionId='14'
                         IsEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
                         x:Name="AppbBtn_Delete"
                         Icon="Delete"
@@ -182,7 +183,16 @@
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
                 <RelativePanel>
-                    
+                    <AppBarButton x:ConnectionId='13'
+                        IsEnabled="{Binding IsCheckAdmin}"
+                        x:Name="AppBtn_ShowAccount"
+                        Icon="ContactInfo"
+                        Command="{Binding ShowAccount}"/>
+                    <TextBlock Text="Show Account"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+
+
                 </RelativePanel>
 
             </StackPanel>

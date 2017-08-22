@@ -8,6 +8,11 @@
     mc:Ignorable="d"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core">
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding LoadedView}"/>
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
     <Grid
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
@@ -95,7 +100,8 @@
                                 BorderThickness="0"
                                 Content="Get Account"
                                 FontSize="50"
-                                Background="WhiteSmoke"/>
+                                Background="WhiteSmoke"
+                                Command="{Binding ClickGetAccount}"/>
 
                         </StackPanel>
                     </Grid>

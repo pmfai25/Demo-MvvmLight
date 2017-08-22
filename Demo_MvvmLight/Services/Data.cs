@@ -44,7 +44,7 @@ namespace Demo_MvvmLight.Services
                     }
                     else if (EChoice.User == e && euser != null)
                     {
-                        query = $"delete from {e.ToString()} where {euser.ToString()} like {obj.ToString()}";
+                        query = $"delete from {e.ToString()} where {euser.ToString()} like '{obj.ToString()}'";
                         db.Prepare(query).Step();
                         return true;
                     }

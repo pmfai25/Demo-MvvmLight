@@ -52,7 +52,8 @@
                 Orientation="Vertical" x:Name="s">
 
                 <Button x:Name="Btn"
-                        Content="Hello"
+                        IsEnabled="False"
+                        Content="{Binding UserName}"
                         IsHoldingEnabled="True"
                         IsRightTapEnabled="{Binding IsCheckMultiChechkBoxSelectMode}"
                         Command="{Binding Click_Item}"
@@ -182,7 +183,16 @@
                 </RelativePanel>
                 <AppBarButton IsEnabled="False"/>
                 <RelativePanel>
-                    
+                    <AppBarButton
+                        IsEnabled="{Binding IsCheckAdmin}"
+                        x:Name="AppBtn_ShowAccount"
+                        Icon="ContactInfo"
+                        Command="{Binding ShowAccount}"/>
+                    <TextBlock Text="Show Account"
+                               RelativePanel.AlignHorizontalCenterWithPanel="True"
+                               RelativePanel.AlignBottomWithPanel="True"/>
+
+
                 </RelativePanel>
 
             </StackPanel>

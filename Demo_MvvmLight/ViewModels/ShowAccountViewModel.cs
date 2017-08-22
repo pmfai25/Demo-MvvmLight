@@ -57,6 +57,8 @@ namespace Demo_MvvmLight.ViewModels
                     {
                         bool a =await DataProvider.DeleteWithAsync(AddressData, Enum.EChoice.User, (t as User).Name, euser: Enum.EinUser.Name);
                     });
+                    AccountUser = DataProvider.GetAllUser(AddressData).ToList();
+                    RaisePropertyChanged("AccountUser");
                 });
                 return _deleteSpecificData;
             }

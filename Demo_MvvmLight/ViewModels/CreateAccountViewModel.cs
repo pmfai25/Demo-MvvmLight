@@ -39,9 +39,7 @@ namespace Demo_MvvmLight.ViewModels
             {
                 _tapped_Ok = new RelayCommand(async () =>
                 {
-                    UserData.Name = Name;
-                    UserData.NameOfUser = NameOfUser;
-                    UserData.Pass = Password;
+                    UserData = new User(Name, Password, NameOfUser);
                     Task<bool> Insert = DataProvider.Insert(AddressData, Enum.EChoice.User, user: UserData);
                     var check = await Insert;
                     string content = check ? "OK" : "Error";
