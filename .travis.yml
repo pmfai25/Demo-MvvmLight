@@ -1,0 +1,6 @@
+language: csharp
+solution: Demo_MvvmLight.sln
+install:
+  - nuget restore Demo_MvvmLight.sln
+script:
+  - xbuild /p:Configuration=Release Demo_MvvmLight.sln
